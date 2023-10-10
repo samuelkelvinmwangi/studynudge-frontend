@@ -28,5 +28,6 @@ ul{
 .btn:hover{
   background: #fff;
   color: #7E57C2;
+  border: 1px solid black ;
   transition: 0.3s;
 }
