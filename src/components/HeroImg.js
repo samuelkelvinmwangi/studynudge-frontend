@@ -1,7 +1,8 @@
 import "./HeroImgStyles.css";
 
 import React from 'react';
-import IntroImg from "../assets/Homepage.jpg"
+import IntroImg from "../assets/Homepage.jpg";
+import { Link } from "react-router-dom";
 
 const HeroImg = () => {
   return (
@@ -9,6 +10,14 @@ const HeroImg = () => {
         <div className="mask">
             <img className="home-img" 
                 src= {IntroImg} alt="IntroImg"/>
+        </div>
+        <div className="content">
+          <p>WELCOME</p>
+          <h1>Study Nudge</h1>
+          <div>
+            <Link to="/login" className="btn">Get Started</Link>
+            <Link to="/contact" className="btn-light">Contact</Link>
+          </div>
         </div>
     </div>
   );
