@@ -3,7 +3,7 @@ import "./AboutContentStyles.css";
 
 import React from 'react';
 import About from "../assets/About.jpg"
-import Contact from '../routes/Contact'
+
 
 const AboutContent = () => {
   return (
