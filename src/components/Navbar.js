@@ -9,6 +9,21 @@ const Navbar = () => {
       <Link to="/">
         <h1>Snudge.</h1>
       </Link>
+
+      <ul className="nav-menu">
+        <li>
+            <Link to="/">Home</Link>
+        </li>
+
+        <li>
+            <Link to="/about">About</Link>
+        </li>
+
+        <li>
+            <Link to="/contact">Contact</Link>
+        </li>
+      </ul>
+
     </div>
   );
 }
