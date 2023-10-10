@@ -16,7 +16,6 @@ const HeroImg = () => {
           <h1>Study Nudge</h1>
           <div>
             <Link to="/login" className="btn">Get Started</Link>
-            <Link to="/contact" className="btn-light">Contact</Link>
           </div>
         </div>
     </div>
