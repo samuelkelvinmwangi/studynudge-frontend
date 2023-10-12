@@ -23,11 +23,11 @@ p.sub-title{
     font-size: 1rem;
 }
 #contact-container{
-    width: 1200px;
+    /* width: 1200px; */
     border-radius: 15px;
     overflow: hidden;
     padding: 10px;
-    display: flex;
+    display: inline-block;
     backdrop-filter: blur(20px);
     border: 1px solid rgb(255,255,255, .2);
     -webkit-box-shadow: 2px -1px 42px 10px rgba(0,0,0,0.75);
@@ -35,12 +35,13 @@ p.sub-title{
     box-shadow: 2px -1px 42px 10px rgba(0,0,0,0.75);
 }
 .contact-info{
-    background-color: #b872f2;
+    background: transparent;
+    backdrop-filter: blur(20px);
     border-radius: 15px;
     flex: 0 1 40%;
     padding: 40px;
     color: white;
-    display: flex;
+    display: block;
     flex-direction: column;
 }
     h4{
@@ -86,9 +87,9 @@ p.sub-title{
             height: 25px;
             border-radius: 50%;
         }
-form{
+/* form{
     padding: 40px;
-    
+}
     .col{
         display: flex;
         width: 100%;
@@ -100,7 +101,7 @@ form{
         flex-direction: column;
         flex: 0 0 100%;
         padding-right: 40px;
-
+    }
         label{
            font-size: 1.2rem;
            color: white;
@@ -108,19 +109,24 @@ form{
         }
 
         input[type="text"]{
-            background: rgba(255,255,255, .2);
+            background: transparent;
             border: none;
-            border-bottom:1px solid #b872f2;
-            padding: 20px;
-            font-size: 2rem;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 1.5rem;
             font-weight: 300;
+            color: white;
+            border-bottom:rgba(255,255,255, .4);
         }
+            &:focus{
+                border: none;
+                outline: none;
+                border-bottom:2px solid #b872f2;
+            }
+        
 
         &:nth-child(2){
             padding-right: 0;
-        }
-    }
-
-}
+        } */
 
     
