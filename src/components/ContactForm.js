@@ -16,7 +16,7 @@ const Contact = () => {
         <h4>
             Contact Information
           </h4>
-          <p>Our services are available and we have a dedicated team ready to assist you.</p>
+          <p className="sub-title">Our services are available and we have a dedicated team ready to assist you.</p>
 
           <div className="icon-text">
             <i className="icon"><FaPhone  style={{color:"#fff"}}/></i>
@@ -31,24 +31,24 @@ const Contact = () => {
           <div className="icon-text">
             <i className="icon"><FaLocationArrow  style={{color:"#fff"}}/></i>
             <span>Moringa School Ngong road
-</span>
+            </span>
           </div>
 
           <div className="social-media">
 
-            <a href="#" className="icon-circle">
+            <a href="https://web.facebook.com/?_rdc=1&_rdr" className="icon-circle">
               <i className="icon"><FaFacebook  style={{color:"#fff"}}/></i>
             </a>
 
-            <a href="#" className="icon-circle">
+            <a href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fonetap%2F%3Fnext%3D%252F%26__coig_login%3D1" className="icon-circle">
               <i className="icon"><FaInstagram  style={{color:"#fff"}}/></i>
             </a>
 
-            <a href="#" className="icon-circle">
+            <a href="https://twitter.com/i/flow/login" className="icon-circle">
               <i className="icon"><FaTwitter  style={{color:"#fff"}}/></i>
             </a>
 
-            <a href="#" className="icon-circle">
+            <a href="https://www.whatsapp.com/" className="icon-circle">
               <i className="icon"><FaWhatsapp  style={{color:"#fff"}}/></i>
             </a>
 

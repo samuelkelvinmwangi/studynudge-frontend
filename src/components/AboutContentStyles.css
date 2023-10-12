@@ -1,4 +1,8 @@
-.about .left h1, p {
+.about .left h1{
+    color: black;
+    text-decoration: none;
+}
+.about .left p{
     color: black;
     text-decoration: none;
 }

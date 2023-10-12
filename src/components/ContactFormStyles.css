@@ -1,9 +1,22 @@
 .body{
-    background-color: blue;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 89vh;
+    width: 100%;
+    background-image: url(https://images.pexels.com/photos/13649371/pexels-photo-13649371.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover;
+}
+h1{
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+}
+p.sub-title{
+    color: white;
+    text-align: center;
+    font-size: 1rem;
 }
 #contact-container{
     width: 1200px;
@@ -11,7 +24,8 @@
     overflow: hidden;
     padding: 10px;
     display: flex;
-    background: white;
+    backdrop-filter: blur(25px);
+    border: 1px solid rgb(255,255,255, .2);
 }
 .contact-info{
     background-color: #b872f2;
@@ -27,9 +41,10 @@
         font-weight: 500;
         margin-top: 0;
         margin: 0;
+        text-align: center;
     }
     p{
-      font-size: 1.2rem;
+      font-size: 1rem;
       color: rgb(255,255,255, .7);
       font-weight: 300;
       margin-bottom: 2rem;
@@ -54,6 +69,7 @@
         display: flex;
         width: 50%;
         justify-content: space-between;
+        margin-left: 120px;
     }
         .icon-circle{
             flex: 0 1 25px;
@@ -62,6 +78,5 @@
             align-items: center;
             height: 25px;
             border-radius: 50%;
-            background: rgb(255,255,255, .7);
         }
     
