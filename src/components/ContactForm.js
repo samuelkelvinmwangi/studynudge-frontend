@@ -3,7 +3,7 @@ import "./ContactFormStyles.css";
 
 
 import React from 'react';
-import { FaLocationArrow, FaMailBulk, FaPhone } from "react-icons/fa"
+import { FaFacebook, FaInstagram, FaLocationArrow, FaMailBulk, FaPhone, FaTwitter, FaWhatsapp } from "react-icons/fa"
 
 const Contact = () => {
   return (
@@ -19,24 +19,39 @@ const Contact = () => {
           <p>Our services are available and we have a dedicated team ready to assist you.</p>
 
           <div className="icon-text">
-            <i className="icon"><FaPhone size={20} style={{color:"#fff", marginRight: "2rem"}}/></i>
-            <span>text</span>
+            <i className="icon"><FaPhone  style={{color:"#fff"}}/></i>
+            <span>+254-712-456-789</span>
           </div>
 
           <div className="icon-text">
-            <i className="icon"><FaMailBulk size={20} style={{color:"#fff", marginRight: "2rem"}}/></i>
-            <span>text</span>
+            <i className="icon"><FaMailBulk  style={{color:"#fff"}}/></i>
+            <span>snudge@gmail.com</span>
           </div>
 
           <div className="icon-text">
-            <i className="icon"><FaLocationArrow size={20} style={{color:"#fff", marginRight: "2rem"}}/></i>
-            <span>text</span>
+            <i className="icon"><FaLocationArrow  style={{color:"#fff"}}/></i>
+            <span>Moringa School Ngong road
+</span>
           </div>
 
           <div className="social-media">
+
             <a href="#" className="icon-circle">
-              <i className="icon"></i>
+              <i className="icon"><FaFacebook  style={{color:"#fff"}}/></i>
             </a>
+
+            <a href="#" className="icon-circle">
+              <i className="icon"><FaInstagram  style={{color:"#fff"}}/></i>
+            </a>
+
+            <a href="#" className="icon-circle">
+              <i className="icon"><FaTwitter  style={{color:"#fff"}}/></i>
+            </a>
+
+            <a href="#" className="icon-circle">
+              <i className="icon"><FaWhatsapp  style={{color:"#fff"}}/></i>
+            </a>
+
           </div>
         </div>
 
