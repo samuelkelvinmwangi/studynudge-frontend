@@ -8,8 +8,8 @@ import { FaFacebook, FaInstagram, FaLocationArrow, FaMailBulk, FaPhone, FaTwitte
 const Contact = () => {
   return (
     <div className="body">
-      <h1>Contact Us</h1>
-      <p>For any questions and login errors</p>
+      <h1 className="h">Contact Us</h1>
+      <p className="p">For any questions and login errors</p>
 
       <div id="contact-container">
         <div className="contact-info">
@@ -57,7 +57,21 @@ const Contact = () => {
 
 
         <form>
-         
+
+         <div className="col-2">
+
+          <div className="form-group">
+            <label>First Name</label>
+            <input type="text" />
+          </div>
+
+          <div className="form-group">
+            <label>First Name</label>
+            <input type="text" />
+          </div>
+          
+         </div>
+
         </form>
 
 
