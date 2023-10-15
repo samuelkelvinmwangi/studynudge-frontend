@@ -3,7 +3,16 @@
     box-sizing: border-box;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-
+.body-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 89vh;
+    width: 100%;
+    background-image: url(https://images.pexels.com/photos/1112048/pexels-photo-1112048.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover;
+}
 .page {
     height: 89vh;
     width: 100%;
@@ -13,11 +22,12 @@
 }
 
 .cover {
-    background-color: whitesmoke;
-    width: 30em;
-    height: 35em;
-    position: relative;
-    border-radius: 1rem;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 10px;
+    display: inline-block;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgb(255,255,255, .2);
     -webkit-box-shadow: 0px 0px 30px 14px rgba(140,83,189,1);
     -moz-box-shadow: 0px 0px 30px 14px rgba(140,83,189,1);
     box-shadow: 0px 0px 30px 14px rgba(140,83,189,1);
@@ -26,4 +36,58 @@
     align-items: center;
     justify-content: space-around;
 
+}
+
+.input{
+    border: none;
+    background-color: aliceblue;
+    height: 4em;
+    width: 80%;
+    border-radius: 0.25em;
+    text-align: center;
+    padding: 2em;
+    margin: 1rem;
+    display: flex;
+    background: transparent;
+}
+
+.input:focus {
+    outline-color: blueviolet;
+}
+
+.input[type="text"]{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    border-bottom:rgba(255,255,255, .4);
+}
+
+.input[type="password"]{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    border-bottom:rgba(255,255,255, .4);
+}
+.paragraph{
+    color: white;
+}
+
+.login-btn{
+    width: 40%;
+    height: 3em;
+    background-color: rgb(186, 110, 240, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 0.25em;
+    cursor: pointer;
+}
+.login-btn:hover{
+    transform: scale(1.25);
+}
+.paragraph{
+    margin-top: 2rem;
 }

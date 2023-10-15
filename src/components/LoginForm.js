@@ -1,19 +1,21 @@
 import React from 'react';
-import './Loginform.css';
-import Login from './../routes/Login';
+import './LoginForm.css';
+
 
 const LoginForm = () => {
   return (
+  <div className='body-2' >
     <div className='cover'>
         <h1>Welcome Back</h1>
-        <input type='text' placeholder='username' />
-        <input type='password' placeholder='password' />
+        <input className='input' type='text' placeholder='username' />
+        <input className='input' type='password' placeholder='password' />
 
         <div className='login-btn'>Login</div>
-        <p className='text'>By continuing you agree to our 
+        <p className='paragraph'>By continuing you agree to our 
                             terms of service and privacy policy</p>
       
     </div>
+  </div>
   );
 }
 
