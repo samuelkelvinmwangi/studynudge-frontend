@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 import { FaBars, FaTimes } from "react-icons/fa";
 
+
 const Navbar = () => {
 
   const [click, setClick] = useState(false);
@@ -20,6 +21,10 @@ const Navbar = () => {
       <ul className={click ? "nav-menu active" : "nav-menu"}>
         <li>
             <Link to="/">Home</Link>
+        </li>
+
+        <li>
+            <Link to="/posts">Posts</Link>
         </li>
 
         <li>
