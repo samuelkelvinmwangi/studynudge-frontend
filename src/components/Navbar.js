@@ -12,8 +12,19 @@ const Navbar = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 
+  const [color, setColor] = useState(false)
+  const changeColor = () => {
+    if (window.scrollBy >=100){setColor(true);
+    }
+    else{
+      setColor(false);
+    }
+  }
+
+  window.addEventListener('scroll', changeColor);
+
   return (
-    <div className="header">
+    <div className={color ? 'header header-bg' : 'header'}>
       <Link to="/">
         <h1>Snudge.</h1>
       </Link>

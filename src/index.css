@@ -31,3 +31,12 @@ ul{
   border: 1px solid black ;
   transition: 0.3s;
 }
+
+.btn-light{
+  background: transparent;
+  color: white;
+}
+
+.btn-light:hover{
+  background-color: #ffffff;
+}
