@@ -1,8 +1,7 @@
 import "./FooterStyles.css"
 
 import React from 'react';
-import { FaHome, FaMailBulk, FaPhone } from "react-icons/fa"
-import About from '../routes/About'
+import { FaFacebook, FaHome, FaInstagram, FaMailBulk, FaPhone, FaTwitter } from "react-icons/fa"
 
 const Footer = () => {
   return (
@@ -32,6 +31,11 @@ const Footer = () => {
                 <p>At Study Nudge, we are passionate about helping you achieve your goals and unlock your full potential. 
         We understand that motivation is the driving force behind every success story. 
         That's why we've created a platform dedicated to inspiring and empowering you on your journey towards greatness.</p>
+            <div className="social">
+            <FaFacebook size={30} style={{color:'#000', marginRight:'1rem'}} />
+            <FaTwitter size={30} style={{color:'#000', marginRight:'1rem'}} />
+            <FaInstagram size={30} style={{color:'#000', marginRight:'1rem'}} />
+            </div>
             </div>
 
         </div>
