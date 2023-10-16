@@ -64,6 +64,11 @@ h1, h4, p, a{
     .hero .content p{
         font-size: 1.4rem;
     }
+
+    .link{
+        display: inline-flex;
+        flex-direction: column;
+    }
 }
 
 .hero .content p{
