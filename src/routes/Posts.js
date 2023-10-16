@@ -8,7 +8,7 @@ const Posts = () => {
   return (
     <div>
     <Navbar />
-    <HeroImg2 />
+    <HeroImg2 heading="POSTS" text="Posts Section"/>
     <PostsCards />
     <Footer />
     </div>

@@ -7,8 +7,8 @@ const HeroImg2 = () => {
   return (
     <div className='hero-img'>
         <div className='heading'>
-            <hi>This is a heading</hi>
-            <p>This is a text</p>
+            <hi>{this.props.heading}</hi>
+            <p>{this.props.text}</p>
         </div>
       
     </div>
