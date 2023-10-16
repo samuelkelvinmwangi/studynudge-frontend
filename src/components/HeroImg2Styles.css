@@ -1,23 +1,33 @@
-.hero-img{
+.home-img2{
     width: 100%;
-    background-color: blueviolet;
     height: 60vh;
     position: relative;
 }
 
-.hero-img::before{
-    content: "";
-    background:url(https://www.pexels.com/photo/photo-of-turned-on-laptop-computer-943096/) ;
-    background-size: cover;
-    background-position: center top;
-    height: 100%;
+.hero-img{
     width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+}
+
+.home-img2::after{
+    content: "";
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
 }
 
+.hero .content{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    text-align: center;
+}
 .heading{
     width: 100%;
     height: 100%;
@@ -30,6 +40,12 @@
 .hero-img p{
     font-size: 1.4rem;
     text-align: center;
+}
+
+.hero-img h1{
+    font-size: 2.4rem;
+    text-align: center;
+    color: black;
 }
 
 @media screen and (max-width:640px){
