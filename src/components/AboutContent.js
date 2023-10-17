@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import "./AboutContentStyles.css";
 
 import React from 'react';
-import About from "../assets/About.jpg"
+import About from "../assets/About 3.jpg"
+import About1 from "../assets/About 2.jpg"
 
 
 const AboutContent = () => {
@@ -21,9 +22,15 @@ const AboutContent = () => {
     </div>
     <div className="right">
         <div className="img-container">
+
             <div className="img-stack top">
                 <img src={About} className="img" alt="true"/>
             </div>
+
+            <div className="img-stack bottom">
+                <img src={About1} className="img" alt="true"/>
+            </div>
+
         </div>
     </div>
       

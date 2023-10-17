@@ -10,8 +10,8 @@ const Posts = () => {
     <div>
     <Navbar />
     <HeroImg2 heading="POSTS" text="Posts Section"/>
-    <LoginCard />
     <PostsCards />
+    <LoginCard />
     <Footer />
     </div>
   );
