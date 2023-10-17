@@ -16,7 +16,7 @@ const LoginCard = () => {
                 <p>Remove post</p>
                 <p>Approve content</p>
                 <p>Create categories</p>
-                <Link to='/posts' className='btn'>Login Now</Link>
+                <Link to='/login' id='bt' className='btn'>Login Now</Link>
             </div>
 
             <div className='card'>
@@ -27,7 +27,7 @@ const LoginCard = () => {
                 <p>Edit content</p>
                 <p>Review content</p>
                 <p>Flag content</p>
-                <Link to='/posts' className='btn'>Login Now</Link>
+                <Link to='/login' id='bt' className='btn'>Login Now</Link>
             </div>
 
             <div className='card'>
@@ -38,7 +38,7 @@ const LoginCard = () => {
                 <p>Post content</p>
                 <p>Comment</p>
                 <p>Add to wishlist</p>
-                <Link to='/posts' className='btn'>Login Now</Link>
+                <Link to='/login' id='bt' className='btn'>Login Now</Link>
             </div>
 
         </div>
