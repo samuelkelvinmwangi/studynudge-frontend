@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# TechSpace Education Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+- [Introduction](#introduction)
+- [MVP Features](#mvp-features)
+- [Technical Stack](#technical-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Available Scripts
+## Introduction
 
-In the project directory, you can run:
+Study Nudge Platform is a web-based application designed to provide students with authentic and verified information, inspiration, and advice in the tech space. This platform hosts a wide variety of content types, including videos, audio, and articles/blogs, all of which are created to aid in studying. This README offers an overview of the platform's features and technical details.
 
-### `npm start`
+## MVP Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The Minimum Viable Product (MVP) of the platform includes the following key features:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **User Types:**
+  - **Admin:**
+    - User Management: Add, deactivate, and manage user accounts.
+    - Content Moderation: Flag or remove content violating the platform's rules.
+    - Content Approval: Review and approve content for public publication.
+    - Category Management: Create and manage content categories.
 
-### `npm test`
+  - **Staff:**
+    - Profile Creation: Ability to create a staff profile.
+    - Category Management: Create and manage content categories.
+    - Content Approval: Review and approve user-generated content.
+    - Content Moderation: Flag published content that violates platform rules.
+    - Content Posting: Create and post content.
+    - Content Editing: Edit details of posted content.
+    - Content Review: Like/dislike and comment on content.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  - **Student:**
+    - Profile Creation: Ability to create a student profile.
+    - Category Subscription: Subscribe to tech categories of interest.
+    - Customization: Customize and manage their interests.
+    - Content Posting: Create and post their content.
+    - Content Consumption: View, listen to, or read content.
+    - Community Interaction: Comment on posts and start comment threads.
+    - Wishlist: Add content to a wishlist.
+    - Content Sharing: Share and recommend videos or articles.
+    - Recommendations: Receive personalized content recommendations.
+    - Notifications: Get alerts for new content in subscribed categories.
+    - User Interaction: View and engage with other users' remarks, comments, and discussions.
 
-### `npm run build`
+## Technical Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The platform is built with the following technologies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Backend:**
+  - Ruby on Rails
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Database:**
+  - PostgreSQL
 
-### `npm run eject`
+- **Frontend:**
+  - ReactJS
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Wireframes:**
+  - Figma for designing a mobile-friendly interface
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Testing Frameworks:**
+  - Vercel for frontend testing
+  - Minitests for backend testing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To set up and run the TechSpace Education Platform on your local machine, follow these steps:
 
-## Learn More
+1. Clone the repository from GitHub:
+   ```sh
+   git clone <repository-url>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Install the necessary dependencies for both the frontend and backend.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Configure your PostgreSQL database.
 
-### Code Splitting
+4. Set up environmental variables, including API keys and database configurations, in a .env file.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+5. Run the development server for both the frontend and backend.
 
-### Analyzing the Bundle Size
+## Usage
+# Here's how to use the platform:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Go to : https://studynudge-frontend-ob8r.vercel.app/
 
-### Making a Progressive Web App
+login and you can carry out the following funtions:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Admin: Access the admin dashboard to manage users, content, and categories.
 
-### Advanced Configuration
+2. Staff: Log in as staff to create, approve, and manage content in specific categories.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3. Student: Create a profile, customize your interests, subscribe to categories, post content, and engage with the community.
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Testing
 
-### `npm run build` fails to minify
+Testing is a crucial part of this project. We use vercel for frontend testing and Minitests for backend testing. Ensure all tests pass before making changes or deploying updates.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# For frontend tests
+npm test
+
+# For backend tests
+bundle exec minitest
+
+## Contributing
+
+We welcome contributions to the project! If you'd like to contribute, please follow our Contribution Guidelines.
+
+# License
+
+This project is licensed under the MIT License.
