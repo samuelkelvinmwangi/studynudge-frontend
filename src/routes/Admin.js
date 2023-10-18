@@ -1,18 +1,17 @@
 import React from 'react';
-import NavigationBar from '../components/NavigationBar';
+import NavBar from '../components/NavigationBar';
 import AdminDashboard from '../components/AdminDashboard';
+import './Admin.css'
+
 
 
 const Admin = () => {
   return (
-    <div>
-    <NavigationBar/>
+    <div className='components'>
+      <NavBar />
     <AdminDashboard />
-    
-    
-      
     </div>
   );
 }
 
-export default Admin;
+export default Admin;

@@ -1,0 +1,23 @@
+.users, .posts {
+    background-color: rgb(99, 27, 170);
+    width: 200px;
+    padding: 20px;
+    margin-left: 4cm;
+    margin-top: 2cm;
+    margin-bottom: 2cm;
+}
+
+.stats {
+    display: flex;
+    grid-gap: 60px;
+}
+
+.tables {
+    display: flex;
+}
+table {
+    width: 6cm;
+    padding-left: 3cm;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
