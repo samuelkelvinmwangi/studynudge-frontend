@@ -1,34 +1,40 @@
 .navbar {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 10px;
-    background-color: #030830;
     flex-direction: column;
-    align-items: flex-start;
-    width: 20%;
+    background: #161C24;
+    width: 200px;
     height: 100vh;
-   }
-
-.navbar-right {
+    padding: 20px;
+  }
+  
+  .navbar h1 {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .navbar-right {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    height: 100%;
-   }
-
-   .navbar-right button:nth-child(n+1):nth-child(-n+4) {
-    margin-bottom: 20px;
-    height: 50px;
-    width: 200px;
+  }
+  
+  .navbar-right button {
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: left;
     background-color: transparent;
-    border: transparent;
-}
+    color: white;
+   
+  }
 
-   .navbar-right button:last-child {
+  .navbar-right button:last-child {
     margin-top: 300%;
     color: #ff0000;
     background-color: transparent;
     height: 30px;
     width:  200px
    }
+  
+  /* .navbar-right button:hover {
+    
+  } */

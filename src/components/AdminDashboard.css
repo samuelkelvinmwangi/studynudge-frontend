@@ -1,23 +1,54 @@
-.users, .posts {
-    background-color: rgb(99, 27, 170);
-    width: 200px;
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px;
-    margin-left: 4cm;
-    margin-top: 2cm;
-    margin-bottom: 2cm;
-}
-
-.stats {
+    background-color: #F4F6F8;
+    color: white;
+  }
+  
+  .dashboard h1 {
+    margin-top: 10rem;
+    background-color: #F4F6F8;
+    color: black;
+    margin-left: 2px;
+    
+  }
+  
+  .dashboard .col-10 {
+    flex-basis: 80%;
+  }
+  
+  .dashboard #search {
+    width: 100%;
+    padding: 10px;
+   
+  }
+  
+  .stats {
     display: flex;
-    grid-gap: 60px;
-}
-
-.tables {
-    display: flex;
-}
-table {
-    width: 6cm;
-    padding-left: 3cm;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .stats .users, .stats .posts {
+    background-color: #7E57C2;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    /* width: 250px; */
+    align-items: center;
+  }
+  
+  .tables {
+    padding: 20px;
+  }
+  
+  .tables table {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .tables th, .tables td {
+    padding: 10px;
+  }
