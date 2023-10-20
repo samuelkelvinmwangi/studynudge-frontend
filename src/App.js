@@ -5,6 +5,8 @@ import About from "./routes/About";
 import Contact from "./routes/Contact";
 import Admin from "./routes/Admin";
 import AdminCategory from "./routes/AdminCategory";
+import Staff from "./routes/Staff";
+import StaffCategory from "./routes/StaffCategory";
 
 import { Route, Routes } from "react-router-dom";
 
@@ -17,6 +19,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/category" element={<AdminCategory />} />
+        <Route path="/staff" element={<Staff />} />
+        <Route path="/staff/category" element={<StaffCategory />} />
       </Routes>
     </>
   );
