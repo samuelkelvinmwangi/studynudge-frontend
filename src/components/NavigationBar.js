@@ -21,6 +21,7 @@ const Navbar = () => {
       <div className="navbar-right">
         <button onClick={handleDashboard}>Dashboard</button>
         <button onClick={handleCategory}>Categories</button>
+        <button>Users</button>
         <button>Content</button>
         <button>Profile</button>
         <button>Logout</button>
