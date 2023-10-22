@@ -10,7 +10,7 @@ function ContentTab() {
     };
 
     return (
-        <div className='tabs'>
+        <div className='content-tabs'>
             <div className="tab-container">
                 <div className={`tab${activeTab === 'Videos' ? '-active' : ''}`} onClick={() => handleTabClick('Videos')}>
                     Videos
