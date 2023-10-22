@@ -1,0 +1,40 @@
+.tabs {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+}
+
+.tab-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    align-items: center;
+    justify-content: space-between;
+    width: 600px;
+}
+
+.content-div {
+    display: flex;
+    flex-direction: row;
+    width: 600px;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tab {
+    font-weight: bold;
+}
+
+.tab-active {
+    color: #7E57C2;
+    text-decoration: underline;
+    font-weight: bold;
+}
