@@ -10,7 +10,7 @@ function ContentCard() {
             <div className='card-data-container'>
                 <div className='username-container'>
                     <h5 className='username'>dexterbrian</h5>
-                    <h5>4 Days Ago</h5>
+                    <h5 className='date'>4 Days Ago</h5>
                 </div>
                 <div className='content-data-container'>
                     <h5 className='content-title'>My Experience at the Safaricom Decode Event</h5>

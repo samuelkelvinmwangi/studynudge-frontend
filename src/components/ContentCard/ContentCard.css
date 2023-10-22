@@ -61,3 +61,26 @@
     margin-left: 12px;
     position: relative;
 }
+
+/* Styles for screens smaller than 600px */
+@media (max-width: 650px) {
+    body {
+      background-color: lightblue;
+    }
+  
+    .card-container, .date {
+        margin-left: 12px;
+    }
+
+    .username-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .content-data-container video {
+        width: 344px;
+        height: 194px;
+    }
+}
