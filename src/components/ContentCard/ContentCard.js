@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './ContentCard.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMessage, faShareNodes, faBookmark } from '@fortawesome/free-solid-svg-icons'
 
 function ContentCard() {
     return (
@@ -21,9 +23,9 @@ function ContentCard() {
                         </video>
                     </div>
                     <div className='content-icons'>
-                        <i class="fa-solid fa-message"></i>
-                        <i class="fa-solid fa-share-nodes"></i>
-                        <i class="fa-solid fa-bookmark"></i>
+                        <FontAwesomeIcon icon={faMessage} />
+                        <FontAwesomeIcon icon={faShareNodes} />
+                        <FontAwesomeIcon icon={faBookmark} />
                     </div>
                 </div>
             </div>
