@@ -62,11 +62,14 @@
     position: relative;
 }
 
+#play-button {
+    position: absolute;
+    top: 120px; left: 233px;
+    color: white;
+}
+
 /* Styles for screens smaller than 600px */
 @media (max-width: 650px) {
-    body {
-      background-color: lightblue;
-    }
   
     .card-container, .date {
         margin-left: 12px;
