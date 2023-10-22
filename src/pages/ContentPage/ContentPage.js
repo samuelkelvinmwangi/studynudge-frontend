@@ -1,10 +1,13 @@
 import ContentTab from "../../components/ContentTab/ContentTab";
+import './ContentPage.css';
 
 function ContentPage() {
     return (
-        <div>
+        <div className="content-page-container">
             <h2>Content</h2>
-            <ContentTab />
+            <div className="content-tab-container">
+                <ContentTab />
+            </div>
         </div>
     )
 }
