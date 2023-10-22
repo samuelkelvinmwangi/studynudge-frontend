@@ -1,4 +1,4 @@
-import ContentTab from "../components/ContentTab/ContentTab";
+import ContentTab from "../../components/ContentTab/ContentTab";
 
 function ContentPage() {
     return (
