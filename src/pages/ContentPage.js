@@ -1,6 +1,11 @@
+import ContentTab from "../components/ContentTab/ContentTab";
+
 function ContentPage() {
     return (
-        <div></div>
+        <div>
+            <h2>Content</h2>
+            <ContentTab />
+        </div>
     )
 }
 
