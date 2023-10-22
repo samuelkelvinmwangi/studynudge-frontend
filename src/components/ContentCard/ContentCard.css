@@ -1,6 +1,8 @@
 .card-container {
     display: flex;
     flex-direction: row;
+    margin-top: 24px;
+    margin-bottom: 24px;
 }
 
 .profile-pic-container {
