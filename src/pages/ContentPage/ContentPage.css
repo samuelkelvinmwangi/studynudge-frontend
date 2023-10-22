@@ -1,0 +1,10 @@
+.content-page-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-tab-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
