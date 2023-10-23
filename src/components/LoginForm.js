@@ -6,6 +6,7 @@ import { useState} from 'react';
 const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [ setError] = useState(null);
 
   const handleLogin = async () => {
     const response = await fetch('/api/login', {
@@ -19,11 +20,12 @@ const LoginForm = () => {
     if (response.status === 200) {
       const data = await response.json();
       localStorage.setItem('token', data.token);
-      window.location.href = '/app';
+      window.location.href = '/dashboard';
     } else {
-  
-    } 
-  }
+      setError('Invalid username or password');
+    }
+    
+  };
   return (
   <div className='body-2' >
     <div className='cover'>
@@ -38,6 +40,6 @@ const LoginForm = () => {
     </div>
   </div>
   );
-}
+};
 
 export default LoginForm;
