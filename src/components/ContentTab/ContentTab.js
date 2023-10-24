@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './ContentTab.css';
 import ContentCard from '../ContentCard/ContentCard';
+import { content } from '../../sampledata';
 
 function ContentTab() {
     const [activeTab, setActiveTab] = useState('videos');
@@ -13,13 +14,13 @@ function ContentTab() {
         <div className='content-tabs'>
             <div className="tab-container">
                 <div className={`tab${activeTab === 'videos' ? '-active' : ''}`} onClick={() => handleTabClick('videos')}>
-                    videos
+                    Videos
                 </div>
                 <div className={`tab${activeTab === 'audios' ? '-active' : ''}`} onClick={() => handleTabClick('audios')}>
-                    audios
+                    Audios
                 </div>
                 <div className={`tab${activeTab === 'articles' ? '-active' : ''}`} onClick={() => handleTabClick('articles')}>
-                    articles
+                    Articles
                 </div>
             </div>
 
@@ -27,19 +28,22 @@ function ContentTab() {
                 <div className="content-container">
                     {/* Render content based on activeTab */}
                     {
-                        activeTab === 'videos' && <div>
-                            <ContentCard />
-                        </div>
+                        activeTab === 'videos' &&
+                            content.videos.map((item) => (
+                                <ContentCard key={item.id} title={item.title} url={item.url} username={item.username} created_at={item.created_at} />
+                            ))
                     }
                     {
-                        activeTab === 'audios' && <div>
-                            <ContentCard />
-                        </div>
+                        activeTab === 'audios' &&
+                            content.audios.map((item) => (
+                                <ContentCard key={item.id} title={item.title} url={item.url} username={item.username} created_at={item.created_at} />
+                            ))
                     }
                     {
-                        activeTab === 'articles' && <div>
-                            <ContentCard />
-                        </div>
+                        activeTab === 'articles' &&
+                            content.articles.map((item) => (
+                                <ContentCard key={item.id} title={item.title} url={item.url} username={item.username} created_at={item.created_at} content={item.content}/>
+                            ))
                     }
                 </div>
             </div>
