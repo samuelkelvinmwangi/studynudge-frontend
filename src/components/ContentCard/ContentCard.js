@@ -3,7 +3,7 @@ import './ContentCard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMessage, faShareNodes, faBookmark, faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
 
-function ContentCard({ title, url, username, created_at }) {
+function ContentCard({ title, url, username, created_at, content = '' }) {
 
     const videoRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -39,30 +39,40 @@ function ContentCard({ title, url, username, created_at }) {
                 </div>
                 <div className='content-data-container'>
                     <h5 className='content-title'>{ title }</h5>
-                    <div 
-                        className='video-container' 
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}>
-                        {
-                            isPlaying ? 
-                                showPauseButton ? (
-                                    <i id="pause-button">
-                                        <FontAwesomeIcon icon={faPause} onClick={handleVideo}/>
-                                    </i>
-                                ) : null
-                            : (
-                                <i id="play-button">
-                                    <FontAwesomeIcon icon={faPlay} onClick={handleVideo}/>
-                                </i>
-                            )
-                        }
-                        <video
-                            ref={videoRef}
-                            className='content-video'
-                            src={ url }>
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
+                    {
+                        content !== '' ? (
+                            <div className='image-container'>
+                                <img className='content-image' src={ url } alt="Content"/>
+                            </div>
+                        )
+                        : (
+                            <div 
+                                className='video-container' 
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}>
+                                {
+                                    isPlaying ? 
+                                        showPauseButton ? (
+                                            <i id="pause-button">
+                                                <FontAwesomeIcon icon={faPause} onClick={handleVideo}/>
+                                            </i>
+                                        ) : null
+                                    : (
+                                        <i id="play-button">
+                                            <FontAwesomeIcon icon={faPlay} onClick={handleVideo}/>
+                                        </i>
+                                    )
+                                }
+                                <video
+                                    ref={videoRef}
+                                    className='content-video'
+                                    src={ url }>
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        )
+                    }
+                    
                     <div className='content-icons'>
                         <FontAwesomeIcon icon={faMessage} />
                         <FontAwesomeIcon icon={faShareNodes} />
