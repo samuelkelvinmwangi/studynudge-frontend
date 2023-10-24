@@ -16,12 +16,14 @@
 
 .tab {
     font-weight: bold;
+    cursor: pointer;
 }
 
 .tab-active {
     color: #7E57C2;
     text-decoration: underline;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .content-div {
