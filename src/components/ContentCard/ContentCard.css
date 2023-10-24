@@ -68,7 +68,7 @@
     color: white;
 }
 
-/* Styles for screens smaller than 600px */
+/* Styles for screens smaller than 650px */
 @media (max-width: 650px) {
   
     .card-container, .date {
@@ -89,5 +89,17 @@
 
     #play-button {
         top: 97px; left: 172px;
+    }
+}
+
+/* Styles for screens smaller than 414px */
+@media (max-width: 414px) {
+    .content-data-container video {
+        width: 238px;
+        height: 134px;
+    }
+
+    #play-button {
+        top: 60px; left: 119px;
     }
 }
