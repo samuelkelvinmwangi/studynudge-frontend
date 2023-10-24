@@ -1,9 +1,16 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './ContentCard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMessage, faShareNodes, faBookmark, faPlay } from '@fortawesome/free-solid-svg-icons'
 
 function ContentCard() {
+
+    const videoRef = useRef(null);
+
+    function handlePlay() {
+        videoRef.current.play();
+    }
+
     return (
         <div className='card-container'>
             <div className='profile-pic-container'>
@@ -17,10 +24,10 @@ function ContentCard() {
                 <div className='content-data-container'>
                     <h5 className='content-title'>My Experience at the Safaricom Decode Event</h5>
                     <div className='video-container'>
-                        <i id="play-button">
+                        <i id="play-button" onClick={handlePlay}>
                             <FontAwesomeIcon icon={faPlay} />
                         </i>
-                        <video className='content-video' src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">
+                        <video ref={videoRef} className='content-video' src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
