@@ -3,7 +3,7 @@ import './ContentTab.css';
 import ContentCard from '../ContentCard/ContentCard';
 
 function ContentTab() {
-    const [activeTab, setActiveTab] = useState('Videos');
+    const [activeTab, setActiveTab] = useState('videos');
 
     const handleTabClick = (tab) => {
         setActiveTab(tab);
@@ -12,14 +12,14 @@ function ContentTab() {
     return (
         <div className='content-tabs'>
             <div className="tab-container">
-                <div className={`tab${activeTab === 'Videos' ? '-active' : ''}`} onClick={() => handleTabClick('Videos')}>
-                    Videos
+                <div className={`tab${activeTab === 'videos' ? '-active' : ''}`} onClick={() => handleTabClick('videos')}>
+                    videos
                 </div>
-                <div className={`tab${activeTab === 'Audios' ? '-active' : ''}`} onClick={() => handleTabClick('Audios')}>
-                    Audios
+                <div className={`tab${activeTab === 'audios' ? '-active' : ''}`} onClick={() => handleTabClick('audios')}>
+                    audios
                 </div>
-                <div className={`tab${activeTab === 'Articles' ? '-active' : ''}`} onClick={() => handleTabClick('Articles')}>
-                    Articles
+                <div className={`tab${activeTab === 'articles' ? '-active' : ''}`} onClick={() => handleTabClick('articles')}>
+                    articles
                 </div>
             </div>
 
@@ -27,17 +27,17 @@ function ContentTab() {
                 <div className="content-container">
                     {/* Render content based on activeTab */}
                     {
-                        activeTab === 'Videos' && <div>
+                        activeTab === 'videos' && <div>
                             <ContentCard />
                         </div>
                     }
                     {
-                        activeTab === 'Audios' && <div>
+                        activeTab === 'audios' && <div>
                             <ContentCard />
                         </div>
                     }
                     {
-                        activeTab === 'Articles' && <div>
+                        activeTab === 'articles' && <div>
                             <ContentCard />
                         </div>
                     }
