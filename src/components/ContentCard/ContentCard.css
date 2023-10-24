@@ -62,7 +62,7 @@
     position: relative;
 }
 
-#play-button {
+#play-button, #pause-button {
     position: absolute;
     top: 120px; left: 233px;
     color: white;
@@ -88,7 +88,7 @@
         height: 194px;
     }
 
-    #play-button {
+    #play-button, #pause-button {
         top: 97px; left: 172px;
     }
 }
@@ -100,7 +100,7 @@
         height: 134px;
     }
 
-    #play-button {
+    #play-button, #pause-button {
         top: 60px; left: 119px;
     }
 }
