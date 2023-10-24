@@ -26,7 +26,9 @@ function ContentTab() {
 
             <div className="content-div">
                 <div className="content-container">
-                    {/* Render content based on activeTab */}
+                    {/* Render content based on activeTab 
+                        TODO <p>Sorry! No videos at the moment. Come back later. 😊</p>
+                    */}
                     {
                         activeTab === 'videos' &&
                             content.videos.map((item) => (
