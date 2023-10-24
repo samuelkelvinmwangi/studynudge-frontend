@@ -26,14 +26,14 @@ export const content = {
       {
         "id": 3,
         "title": "Tech Talks with Experts - Episode 1",
-        "url": "https://example.com/podcast/episode1.mp3",
+        "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
         "username": "alexwilson",
         "created_at": "5 Days Ago"
       },
       {
         "id": 4,
         "title": "Tech Insights with Industry Leaders - Episode 2",
-        "url": "https://example.com/podcast/episode2.mp3",
+        "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
         "username": "emilyjones",
         "created_at": "6 Days Ago"
       }
@@ -42,7 +42,7 @@ export const content = {
       {
         "id": 5,
         "title": "Introduction to React",
-        "url": "https://example.com/articles/react-intro",
+        "url": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "username": "michaelbrown",
         "created_at": "7 Days Ago",
         "content": "React is a JavaScript library for building user interfaces..."
@@ -50,7 +50,7 @@ export const content = {
       {
         "id": 6,
         "title": "Getting Started with Python",
-        "url": "https://example.com/articles/python-getting-started",
+        "url": "https://images.unsplash.com/photo-1600206287932-4b8888bd78f6?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "username": "jessicasmith",
         "created_at": "8 Days Ago",
         "content": "Python is a versatile and powerful programming language..."
