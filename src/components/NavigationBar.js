@@ -24,8 +24,10 @@ const Navbar = () => {
         <button>Users</button>
         <button>Content</button>
         <button>Profile</button>
-        <button>Logout</button>
-      </div>
+       </div>
+       <div className='navbar-bottom'>
+           <button>Logout</button>
+        </div>
       </div>
  );
 };
