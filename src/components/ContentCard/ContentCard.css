@@ -66,6 +66,7 @@
     position: absolute;
     top: 120px; left: 233px;
     color: white;
+    cursor: pointer;
 }
 
 /* Styles for screens smaller than 650px */
