@@ -31,7 +31,7 @@ function ContentCard({ id, title, url, username, created_at, content = '', conte
     }
 
     function openContentView() {
-        navigate(`/content/${id}`);
+        navigate(`/content/${id}`, { state: { id, title, url, username, created_at, content, content_type } });
     }
 
     function openUserProfile() {
