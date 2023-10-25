@@ -1,15 +1,21 @@
 import ContentCard from '../ContentCard/ContentCard';
-import { useParams } from "react-router-dom";
-import { content } from '../../sampledata';
+import { useParams, useLocation } from "react-router-dom";
 
-function ContentView({ title, url, username, created_at, content = '', content_type }) {
+function ContentView() {
     
   const { id } = useParams();
+  const location = useLocation();
 
     return (
         <>
-            <h1>Content View { id }</h1>
-            {/* <ContentCard title={title} url={url} username={username} created_at={created_at} content={content} content_type={content_type}/> */}
+            {
+                location.state ? (
+                    <ContentCard title={location.state.title} url={location.state.url} username={location.state.username} created_at={location.state.created_at} content={location.state.content} content_type={location.state.content_type}/>
+                ) : (
+                    <h1>Content View { id }</h1>
+                )
+            }
+            
         </>
     );
 }
