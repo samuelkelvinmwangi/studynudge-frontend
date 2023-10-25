@@ -32,19 +32,19 @@ function ContentTab() {
                     {
                         activeTab === 'videos' &&
                             content.videos.map((item) => (
-                                <ContentCard key={item.id} title={item.title} url={item.url} username={item.username} created_at={item.created_at} content_type={activeTab}/>
+                                <ContentCard key={item.id} id={item.id} title={item.title} url={item.url} username={item.username} created_at={item.created_at} content_type={activeTab}/>
                             ))
                     }
                     {
                         activeTab === 'audios' &&
                             content.audios.map((item) => (
-                                <ContentCard key={item.id} title={item.title} url={item.url} username={item.username} created_at={item.created_at} content_type={activeTab}/>
+                                <ContentCard key={item.id} id={item.id} title={item.title} url={item.url} username={item.username} created_at={item.created_at} content_type={activeTab}/>
                             ))
                     }
                     {
                         activeTab === 'articles' &&
                             content.articles.map((item) => (
-                                <ContentCard key={item.id} title={item.title} url={item.url} username={item.username} created_at={item.created_at} content={item.content} content_type={activeTab}/>
+                                <ContentCard key={item.id} id={item.id} title={item.title} url={item.url} username={item.username} created_at={item.created_at} content={item.content} content_type={activeTab}/>
                             ))
                     }
                 </div>
