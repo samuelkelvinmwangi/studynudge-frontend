@@ -1,8 +1,24 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './AdminDashboard.css';
 
 
 const AdminDashboard = () => {
+
+  const [users, setUsers] = useState([]);
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    fetch("https://snudgeapi.onrender.com/users")
+      .then((r) => r.json())
+      .then(setUsers);
+  }, []);
+
+  useEffect(() => {
+    fetch("https://snudgeapi.onrender.com/categories")
+      .then((r) => r.json())
+      .then(setCategories);
+  }, []);
+
  return (
     <div className='all'>
       <div  className="dashboard">
@@ -12,8 +28,8 @@ const AdminDashboard = () => {
         <div className='users'>
           <h2>Users</h2>
           <div className='sidelining'>
-          <p>27<br></br>New Users</p>
-          <p>131<br></br>Total Users</p>
+          <p>{users.length}<br></br>New Users</p>
+          <p>{users.length}<br></br>Total Users</p>
           </div>
         </div>
         <div className='posts'>
@@ -27,6 +43,7 @@ const AdminDashboard = () => {
       <div className='tables'>
         <div className='table-1'>
       <table>
+        
     <tr>
       <th>New Posts</th>
       <td>View All</td>
@@ -47,14 +64,16 @@ const AdminDashboard = () => {
       <th>New Users</th>
       <td>View All</td>
     </tr>
-    <tr>
-      <td>Samuel Mwangi</td>
-      <td>05/10/2023</td>
-      </tr>
-    <tr>
-      <td>Linet Makena</td>
-      <td>05/10/2023</td>
-    </tr>
+    <tbody>
+    {users.map((user) => (
+          <tr>
+            <td>{user.full_name}</td>
+            <td>{user.email}</td>
+            <td>05/10/2023</td>
+            <td>05/10/2023</td>
+          </tr>
+        ))}
+    </tbody>
  </table>
  </div>
 
@@ -67,14 +86,12 @@ const AdminDashboard = () => {
    <th>New Categories</th>
    <td>View All</td>
  </tr>
- <tr>
-   <td>Artificial Intalligence</td>
-   <td>05/10/2023</td>
- </tr>
- <tr>
-   <td>Jobs</td>
-   <td>05/10/2023</td>
- </tr>
+ {/* {categories.map((category) => ( */}
+        <tr>
+          <td>category.category_name</td>
+          <td>05/10/2023</td>
+        </tr>
+  {/* ))} */}
 </table>
  </div>
  

@@ -63,15 +63,16 @@ return (
     <div className='navRole'>
         <button
         id="Student"
-        className="{button ${active === 'Student' ? 'active' : ''}}"
+        className={`button ${active === 'Student' ? 'active' : ''}`}
         onClick={(e) => {changeDisplay('Student'); handleClick(e);}}>Student</button>
         <button 
         id="Admin"
-        className="{button ${active === 'Admin' ? 'active' : ''}}"
-        onClick={(e) => {changeDisplay('Admin'); handleClick(e)}}>Admin</button>
+        className={`button ${active === 'Admin' ? 'active' : ''}`}
+        onClick={(e) => {changeDisplay('Admin'); handleClick(e)}}>Admin
+        </button>
         <button
         id="Staff"
-        className="{button ${active === 'Staff' ? 'active' : ''}}"
+        className={`button ${active === 'Staff' ? 'active' : ''}`}
         onClick={(e) => {changeDisplay('Staff'); handleClick(e)}}>Staff</button>
       </div>
     
@@ -86,14 +87,14 @@ return (
           </tr>
         </thead>
         <tbody>
-        {users.map((user) => (
+        {/* {users.map((user) => ( */}
           <tr>
-            <td>{user.full_name}</td>
-            <td>{user.email}</td>
+            <td>user.full_name</td>
+            <td>user.email</td>
             <td>05/10/2023</td>
             <td>05/10/2023</td>
           </tr>
-        ))}
+        {/* ))} */}
       </tbody>
       </table>
     )}
@@ -109,14 +110,14 @@ return (
           </tr>
         </thead>
         <tbody>
-        {users.map((user) => (
+        {/* {users.map((user) => ( */}
           <tr>
-            <td>{user.full_name}</td>
-            <td>{user.email}</td>
+            <td>user.full_name</td>
+            <td>user.email</td>
             <td>05/10/2023</td>
             <td>05/10/2023</td>
           </tr>
-        ))}
+        {/* ))} */}
       </tbody>
       </table>
     )}
@@ -131,14 +132,14 @@ return (
           </tr>
         </thead>
         <tbody>
-        {users.map((user) => (
+        {/* {users.map((user) => ( */}
           <tr>
-            <td>{user.full_name}</td>
-            <td>{user.email}</td>
+            <td>user.full_name</td>
+            <td>user.email</td>
             <td>05/10/2023</td>
             <td>05/10/2023</td>
           </tr>
-        ))}
+        {/* ))} */}
       </tbody>
       </table>
     )}

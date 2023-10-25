@@ -1,9 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './AdminCategory.css';
 
 const AdminCategory = () => {
 
   const [showForm, setShowForm] = useState(false);
+  const [categories, setCategories] = useState([]);
+  const [categoryName, setCategoryName] = useState("");
+  const [description, setDescription] = useState("");
+
+  useEffect(() => {
+    fetch("https://snudgeapi.onrender.com/categories")
+      .then((r) => r.json())
+      .then(setCategories);
+  }, []);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const formData = {
+      category_name: categoryName,
+      description: description
+    };
+    fetch("https://snudgeapi.onrender.com/categories", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+  }
+
 
  const toggleForm = () => {
     setShowForm(!showForm);
@@ -32,25 +57,22 @@ return (
     </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>Artificial Intelligence</td>
-    <td>05/10/2023</td>
-
-<td>05/10/2023</td>
-</tr>
-<tr>
-  <td>Jobs</td>
-  <td>05/10/2023</td>
-  <td>05/10/2023</td>
-</tr>
+  {/* {categories.map((category) => ( */}
+        <tr>
+          <td>category.category_name</td>
+          <td>05/10/2023</td>
+          <td>05/10/2023</td>
+        </tr>
+  {/* ))} */}
+  
 </tbody>
 </table>
   </div>
   {showForm && (
-      <form>
+      <form onSubmit={handleSubmit}>
         <h1>Add Category</h1>
-          <input type="text" className="categoryName" placeholder='Name of Category' />
-          <input type="text" className="description" placeholder='Description' />
+          <input type="text" className="categoryName" placeholder='Name of Category' value={categoryName} onChange={(e) => setCategoryName(e.target.value)} />
+          <input type="text" className="description" placeholder='Description' value={description} onChange={(e) => setDescription(e.target.value)} />
         <button className='dltBtn'>Delete Category</button>
         <button type="submit" className='newCategory'>Create Category</button>
       </form>

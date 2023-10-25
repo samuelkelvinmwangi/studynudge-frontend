@@ -24,7 +24,9 @@ const Sidebar = () => {
         <button onClick={handleCategory}>Categories</button>
         <button>Content</button>
         <button>Profile</button>
+        <div className='sidebar-bottom'>
         <button>Logout</button>
+        </div>
       </div>
       </div>
     </div>
