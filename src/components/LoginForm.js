@@ -10,21 +10,28 @@ const LoginForm = () => {
 
   const handleLogin = async () => {
     
-    const response = await fetch('https://snudgeapi.onrender.com/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password }),
-    });
-
-    if (response.status === 200) {
-      const data = await response.json();
-      localStorage.setItem('token', data.token);
-      console.log('login');
-    } else {
-      setError('Invalid Email or password');
-    }
+    await fetch('https://snudgeapi.onrender.com/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email,
+                password
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // if (data.error) {
+            //     setErrorMessage(data.error);
+            // }
+            console.log('My response: ', data);
+            window.location.href = '/dashboard';
+        })
+        .catch(error => {
+            setError(error);
+            console.error('Error:', error);
+        });
     
   };
   return (
