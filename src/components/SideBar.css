@@ -12,6 +12,7 @@
     font-size: 38px;
   font-weight: bold;
   color: #FAFAFA;
+  background-color: #1C1C1C;
   margin-bottom: 20px;
   left: 17px;
   width: 132px;
@@ -35,14 +36,15 @@
   color: white;
   font-size: 20px;
   font-weight: regular;
-  margin-left: 10px;
+  margin: 10px;
    
   }
 
   .sidebar-right button:last-child {
     background-color: #1C1C1C;
     color: #FF0302;
-  
+    margin-top: 150%;
+  margin-left: 20px;
    }
   
 
@@ -59,3 +61,12 @@
   align-items: center;
   height: 80vh;
 }
+
+.sidebar-bottom{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1C1C1C;
+  height: 20px;
+}
+
