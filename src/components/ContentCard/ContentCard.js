@@ -3,11 +3,12 @@ import './ContentCard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMessage, faShareNodes, faBookmark, faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
 
-function ContentCard({ title, url, username, created_at, content = '' }) {
+function ContentCard({ title, url, username, created_at, content = '', content_type }) {
 
-    const videoRef = useRef(null);
+    const mediaRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [showPauseButton, setShowPauseButton] = useState(false);
+    const appUrl = process.env.PUBLIC_URL;
 
     const handleMouseEnter = () => {
         setShowPauseButton(true);
@@ -19,10 +20,10 @@ function ContentCard({ title, url, username, created_at, content = '' }) {
 
     function handleVideo() {
         if (isPlaying) {
-            videoRef.current.pause();
+            mediaRef.current.pause();
             setIsPlaying(false);
         } else {
-            videoRef.current.play();
+            mediaRef.current.play();
             setIsPlaying(true);
         }
     }
@@ -47,7 +48,7 @@ function ContentCard({ title, url, username, created_at, content = '' }) {
                         )
                         : (
                             <div 
-                                className='video-container' 
+                                className='media-container' 
                                 onMouseEnter={handleMouseEnter}
                                 onMouseLeave={handleMouseLeave}>
                                 {
@@ -64,9 +65,10 @@ function ContentCard({ title, url, username, created_at, content = '' }) {
                                     )
                                 }
                                 <video
-                                    ref={videoRef}
-                                    className='content-video'
-                                    src={ url }>
+                                    ref={mediaRef}
+                                    className='content-media'
+                                    src={ content_type === 'audios' ? appUrl + url : url }
+                                    poster={ content_type === 'audios' ? 'https://img.freepik.com/free-vector/hand-drawn-flat-podcast-cover-template_23-2149433228.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1697846400&semt=ais' : ''}>
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
