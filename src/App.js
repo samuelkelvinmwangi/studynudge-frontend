@@ -14,18 +14,18 @@ import { Route, Routes } from "react-router-dom";
 
 function App() {
 
-  const [currentUser, setcurrentUser] = useState('');
+  // const [currentUser, setcurrentUser] = useState('');
 
-  useEffect(()=>{
-    fetch('/login')
-    .then(res => {
-      if(res.ok){
-        res.json().then(user => setcurrentUser)
-      }
-    })
-  },[])
+  // useEffect(()=>{
+  //   fetch('https://snudgeapi.onrender.com/login')
+  //   .then(res => {
+  //     if(res.ok){
+  //       res.json().then(user => setcurrentUser)
+  //     }
+  //   })
+  // },[])
 
-  if(!currentUser) return <Login setcurrentUser={setcurrentUser} />
+  // if(!currentUser) return <Login setcurrentUser={setcurrentUser} />
   return (
     <>
       <Routes>
