@@ -1,6 +1,8 @@
 import React from 'react';
+import "./ProfileFormStyles.css";
 
-const Profile = () => {
+
+const ProfileForm = () => {
   return (
     <div>
     <form>
@@ -27,4 +29,4 @@ const Profile = () => {
   );
 }
 
-export default Profile;
+export default ProfileForm;
