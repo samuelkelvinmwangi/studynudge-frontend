@@ -26,14 +26,14 @@ export const content = {
       {
         "id": 3,
         "title": "Tech Talks with Experts - Episode 1",
-        "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+        "url": "/audio/audio1.m4a",
         "username": "alexwilson",
         "created_at": "5 Days Ago"
       },
       {
         "id": 4,
         "title": "Tech Insights with Industry Leaders - Episode 2",
-        "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+        "url": "/audio/audio2.m4a",
         "username": "emilyjones",
         "created_at": "6 Days Ago"
       }
