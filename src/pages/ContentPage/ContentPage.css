@@ -9,10 +9,6 @@
     justify-content: center;
 }
 
-.page-title {
-    margin-left: 12px;
-}
-
 @media (max-width: 650px) {
 
     .content-tab-container {
