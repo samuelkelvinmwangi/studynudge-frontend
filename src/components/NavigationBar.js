@@ -15,19 +15,21 @@ const Navbar = () => {
     navigate("/admin");
   };
 
+  const handleUsers = () => {
+    navigate("/admin/users");
+  };
+
  return (
     <div className="navbar">
       <h1>Snudge</h1>
       <div className="navbar-right">
         <button onClick={handleDashboard}>Dashboard</button>
         <button onClick={handleCategory}>Categories</button>
-        <button>Users</button>
+        <button onClick={handleUsers}>Users</button>
         <button>Content</button>
         <button>Profile</button>
-       </div>
-       <div className='navbar-bottom'>
-           <button>Logout</button>
-        </div>
+        <button>Logout</button>
+      </div>
       </div>
  );
 };

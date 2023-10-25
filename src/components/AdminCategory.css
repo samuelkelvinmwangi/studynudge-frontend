@@ -1,80 +1,97 @@
 .form-control {
-    width: 39.5cm;
-    height: 2cm;
-    border: 4px;
+  width: 30cm;
+  height: 2cm;
+  border: 4px;
 }
 
 h1 {
-    margin-top: 20px;
-    margin-left: 2cm;
+margin-top: 10rem;
+background-color: #F4F6F8;
+color: black;
+margin-left: 250px;
 }
 .newcategory {
-    background-color: rgb(11, 96, 216);
-    padding: 5px;
+  background-color: rgb(11, 96, 216);
+  border-radius: 10px;
+  width: 166px;
+  height: 38px;
+  border-color: transparent;
 }
 
 table {
-    width: 100%;
-    margin-top: 2cm;
+  width: 100%;
+  margin-top: 1cm;
+  margin-left: 250px;
 }
 
-   
-   h1 {
-    margin-top: 0;
-    margin-bottom: 15px;
-   }
+ 
+ h1 {
+  margin-top: 0;
+  margin-bottom: 15px;
+ }
 
-   button.newcategory {
-    margin-left: auto;
-    margin-right: 0;
-    margin-left: 80%;
-   }
+ button.newcategory {
+  margin-left: auto;
+  margin-right: 0;
+  margin-left: 80%;
+ }
 
-   th, td {
-    padding: 8px;
-    text-align: left; /* Align text to the left */
-  }
+ th, td {
+  padding: 8px;
+  text-align: left; /* Align text to the left */
+}
 
-  .categoryName {
-    display: block;
-    margin-top: 10px;
-  }
+.categoryName {
+  display: block;
+  margin-top: 10px;
+}
 
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-   }
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ }
 
-   .dltBtn {
-    color: red;
-    padding: 7px;
-    width: 5cm;
-    margin-bottom: 1cm;
-   }
+ .dltBtn {
+  color: red;
+  padding: 7px;
+  width: 5cm;
+  margin-bottom: 1cm;
+  margin-left: 300px;
+ }
 
-   .newCategory {
-    width: 5cm;
-    height: 1cm;
-    background-color: rgb(14, 138, 215);
-   }
+ .newCategory {
+  width: 5cm;
+  height: 1cm;
+  background-color: rgb(14, 138, 215);
+  margin-left: 300px;
+  
+ }
 
-   .categoryName, .description {
-    background-color: grey;
-    width: 9cm;
-    
-   }
+ .categoryName, .description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F4F6F8;
+  width: 9cm;
+  margin-left: 300px;
+  
+  
+ }
 
-   .categoryName {
-    height: 50px;
-    margin-bottom: 0.4cm;
-   }
+ .categoryName {
+  height: 50px;
+  margin-bottom: 0.4cm;
 
-   .description {
-    height: 100px;
-    margin-bottom: 1cm;
-   }
+ }
 
-   .description, .categoryName, .newCategory {
-    border-radius: 10px;
-   }
+ .description {
+  height: 100px;
+  margin-bottom: 1cm;
+  
+ }
+
+ .description, .categoryName, .newCategory {
+  border-radius: 10px;
+ }

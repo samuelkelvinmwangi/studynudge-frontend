@@ -18,12 +18,14 @@ const Sidebar = () => {
  
     <div className="sidebar">
       <h1>Snudge</h1>
+      <div className='navbar-all'>
       <div className="sidebar-right">
       <button onClick={handleDashboard}>Dashboard</button>
         <button onClick={handleCategory}>Categories</button>
         <button>Content</button>
         <button>Profile</button>
         <button>Logout</button>
+      </div>
       </div>
     </div>
 
