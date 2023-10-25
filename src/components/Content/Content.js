@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import './ContentTab.css';
+import './Content.css';
 import ContentCard from '../ContentCard/ContentCard';
 import { content } from '../../sampledata';
 
-function ContentTab() {
+function Content() {
     const [activeTab, setActiveTab] = useState('video');
 
     const handleTabClick = (tab) => {
@@ -53,4 +53,4 @@ function ContentTab() {
     );
 }
 
-export default ContentTab;
+export default Content;
