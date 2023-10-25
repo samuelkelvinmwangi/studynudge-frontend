@@ -4,7 +4,7 @@ import ContentCard from '../ContentCard/ContentCard';
 import { content } from '../../sampledata';
 
 function ContentTab() {
-    const [activeTab, setActiveTab] = useState('videos');
+    const [activeTab, setActiveTab] = useState('video');
 
     const handleTabClick = (tab) => {
         setActiveTab(tab);
@@ -13,13 +13,13 @@ function ContentTab() {
     return (
         <div className='content-tabs'>
             <div className="tab-container">
-                <div className={`tab${activeTab === 'videos' ? '-active' : ''}`} onClick={() => handleTabClick('videos')}>
+                <div className={`tab${activeTab === 'video' ? '-active' : ''}`} onClick={() => handleTabClick('video')}>
                     Videos
                 </div>
-                <div className={`tab${activeTab === 'audios' ? '-active' : ''}`} onClick={() => handleTabClick('audios')}>
+                <div className={`tab${activeTab === 'audio' ? '-active' : ''}`} onClick={() => handleTabClick('audio')}>
                     Audios
                 </div>
-                <div className={`tab${activeTab === 'articles' ? '-active' : ''}`} onClick={() => handleTabClick('articles')}>
+                <div className={`tab${activeTab === 'article' ? '-active' : ''}`} onClick={() => handleTabClick('article')}>
                     Articles
                 </div>
             </div>
@@ -30,22 +30,22 @@ function ContentTab() {
                         TODO <p>Sorry! No videos at the moment. Come back later. 😊</p>
                     */}
                     {
-                        activeTab === 'videos' &&
-                            content.videos.map((item) => (
+                        activeTab === 'video' &&
+                            content.content.filter((item) => item.content_type === 'video').map((item) => 
                                 <ContentCard key={item.id} id={item.id} title={item.title} url={item.url} username={item.username} created_at={item.created_at} content_type={activeTab}/>
-                            ))
+                            )
                     }
                     {
-                        activeTab === 'audios' &&
-                            content.audios.map((item) => (
+                        activeTab === 'audio' &&
+                            content.content.filter((item) => item.content_type === 'audio').map((item) => 
                                 <ContentCard key={item.id} id={item.id} title={item.title} url={item.url} username={item.username} created_at={item.created_at} content_type={activeTab}/>
-                            ))
+                            )
                     }
                     {
-                        activeTab === 'articles' &&
-                            content.articles.map((item) => (
+                        activeTab === 'article' &&
+                            content.content.filter((item) => item.content_type === 'article').map((item) => 
                                 <ContentCard key={item.id} id={item.id} title={item.title} url={item.url} username={item.username} created_at={item.created_at} content={item.content} content_type={activeTab}/>
-                            ))
+                            )
                     }
                 </div>
             </div>
