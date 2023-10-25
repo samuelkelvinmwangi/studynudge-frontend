@@ -53,7 +53,7 @@
     height: 262px;
 }
 
-.content-data-container img {
+.content-data-container .image-container {
     cursor: pointer;
 }
 
