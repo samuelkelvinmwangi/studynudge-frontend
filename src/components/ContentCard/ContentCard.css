@@ -48,9 +48,12 @@
     margin: 12px;
 }
 
-.content-data-container video, img {
+.content-data-container video, img, audio {
     width: 466px;
     height: 262px;
+}
+
+.content-data-container img {
     cursor: pointer;
 }
 
@@ -63,7 +66,7 @@
     margin: 12px;
 }
 
-.video-container, .image-container {
+.media-container, .image-container {
     margin-left: 12px;
     position: relative;
 }
@@ -88,7 +91,7 @@
         justify-content: start;
     }
 
-    .content-data-container video, img {
+    .content-data-container video, img, audio {
         width: 344px;
         height: 194px;
     }
@@ -100,7 +103,7 @@
 
 /* Styles for screens smaller than 414px */
 @media (max-width: 414px) {
-    .content-data-container video, img {
+    .content-data-container video, img, audio {
         width: 238px;
         height: 134px;
     }
