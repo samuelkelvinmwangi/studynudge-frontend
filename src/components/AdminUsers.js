@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './AdminUsers.css';
 
 const AdminUsers = () => {
@@ -6,6 +6,16 @@ const AdminUsers = () => {
   const [showForm, setShowForm] = useState(false);
   const [display, setDisplay] = useState('Admin');
   const [active, setActive] = useState('Admin');
+  const [users, setUsers] = useState([]);
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [role, setRole] = useState("");
+
+  useEffect(() => {
+    fetch("https://snudgeapi.onrender.com/users")
+      .then((r) => r.json())
+      .then(setUsers);
+  }, []);
 
  const toggleForm = () => {
     setShowForm(!showForm);
@@ -19,6 +29,22 @@ const AdminUsers = () => {
     setDisplay(e.target.id);
     setActive(e.target.id);
  };
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const formData = {
+    username: userName,
+    email: userEmail,
+    role: role
+  };
+  fetch("https://snudgeapi.onrender.com/users", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData),
+  })
+}
 
 return (
   <div>
@@ -37,15 +63,15 @@ return (
     <div className='navRole'>
         <button
         id="Student"
-        className={button ${active === 'Student' ? 'active' : ''}}
+        className="{button ${active === 'Student' ? 'active' : ''}}"
         onClick={(e) => {changeDisplay('Student'); handleClick(e);}}>Student</button>
         <button 
         id="Admin"
-        className={button ${active === 'Admin' ? 'active' : ''}}
+        className="{button ${active === 'Admin' ? 'active' : ''}}"
         onClick={(e) => {changeDisplay('Admin'); handleClick(e)}}>Admin</button>
         <button
         id="Staff"
-        className={button ${active === 'Staff' ? 'active' : ''}}
+        className="{button ${active === 'Staff' ? 'active' : ''}}"
         onClick={(e) => {changeDisplay('Staff'); handleClick(e)}}>Staff</button>
       </div>
     
@@ -60,24 +86,14 @@ return (
           </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>Brian Waweru</td>
-          <td>bwaweru@gmail.com</td>
-          <td>05/10/2023</td>
-          <td>05/10/2023</td>
-      </tr>
-      <tr>
-          <td>Jeff Mwaura</td>
-          <td>bwaweru@gmail.com</td>
-          <td>05/10/2023</td>
-          <td>05/10/2023</td>
-      </tr>
-      <tr>
-          <td>Linet Makena</td>
-          <td>bwaweru@gmail.com</td>
-          <td>05/10/2023</td>
-          <td>05/10/2023</td>
-      </tr>
+        {users.map((user) => (
+          <tr>
+            <td>{user.full_name}</td>
+            <td>{user.email}</td>
+            <td>05/10/2023</td>
+            <td>05/10/2023</td>
+          </tr>
+        ))}
       </tbody>
       </table>
     )}
@@ -93,24 +109,14 @@ return (
           </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>Student Waweru</td>
-          <td>bwaweru@gmail.com</td>
-          <td>05/10/2023</td>
-          <td>05/10/2023</td>
-      </tr>
-      <tr>
-          <td>Student Mwaura</td>
-          <td>bwaweru@gmail.com</td>
-          <td>05/10/2023</td>
-          <td>05/10/2023</td>
-      </tr>
-      <tr>
-          <td>Student Makena</td>
-          <td>bwaweru@gmail.com</td>
-          <td>05/10/2023</td>
-          <td>05/10/2023</td>
-      </tr>
+        {users.map((user) => (
+          <tr>
+            <td>{user.full_name}</td>
+            <td>{user.email}</td>
+            <td>05/10/2023</td>
+            <td>05/10/2023</td>
+          </tr>
+        ))}
       </tbody>
       </table>
     )}
@@ -125,34 +131,26 @@ return (
           </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>Staff Waweru</td>
-          <td>bwaweru@gmail.com</td>
-          <td>05/10/2023</td>
-          <td>05/10/2023</td>
-      </tr>
-      <tr>
-          <td>Staff Mwaura</td>
-          <td>bwaweru@gmail.com</td>
-          <td>05/10/2023</td>
-          <td>05/10/2023</td>
-      </tr>
-      <tr>
-          <td>Staff Makena</td>
-          <td>bwaweru@gmail.com</td>
-          <td>05/10/2023</td>
-          <td>05/10/2023</td>
-      </tr>
+        {users.map((user) => (
+          <tr>
+            <td>{user.full_name}</td>
+            <td>{user.email}</td>
+            <td>05/10/2023</td>
+            <td>05/10/2023</td>
+          </tr>
+        ))}
       </tbody>
       </table>
     )}
   </div>
   {showForm && (
-      <form>
+      <form onSubmit={handleSubmit}>
         <h1>Create User</h1>
-          <input type="text" className="userName" placeholder='Name of User' />
-          <input type="text" className="email" placeholder='Email Address' />
-          <select id="select" className="select">
+          <input type="text" className="userName" placeholder='Name of User' value={userName} onChange={(e) => setUserName(e.target.value)} />
+          <input type="text" className="email" placeholder='Email Address' value={userEmail} onChange={(e) => setUserEmail(e.target.value)}/>
+          <select id="select" className="select"
+          value={role}
+          onChange={(e) => setRole(e.target.value)}>
             <option value="" disabled selected hidden>Role</option>
             <option value="option1">Admin</option>
             <option value="option2">Student</option>
@@ -167,4 +165,4 @@ return (
 );
 };
 
-export default AdminUsers;
+export default AdminUsers;

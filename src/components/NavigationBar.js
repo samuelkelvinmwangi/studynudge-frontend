@@ -22,15 +22,19 @@ const Navbar = () => {
  return (
     <div className="navbar">
       <h1>Snudge</h1>
+      
       <div className="navbar-right">
         <button onClick={handleDashboard}>Dashboard</button>
         <button onClick={handleCategory}>Categories</button>
         <button onClick={handleUsers}>Users</button>
         <button>Content</button>
         <button>Profile</button>
+        <div className='navbar-bottom'>
         <button>Logout</button>
+        </div>
       </div>
       </div>
+    
  );
 };
 

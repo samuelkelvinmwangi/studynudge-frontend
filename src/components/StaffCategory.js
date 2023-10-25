@@ -10,7 +10,7 @@ const StaffCategory = () => {
  };
 
 return (
-  <div>
+  <div className='all'>
     <div  className="category">
     <div className="searchbox">
           <input

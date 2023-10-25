@@ -7,6 +7,7 @@ import Admin from "./routes/Admin";
 import AdminCategory from "./routes/AdminCategory";
 import Staff from "./routes/Staff";
 import StaffCategory from "./routes/StaffCategory";
+import AdminUsers from "./routes/AdminUsers";
 
 import { Route, Routes } from "react-router-dom";
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/admin/category" element={<AdminCategory />} />
         <Route path="/staff" element={<Staff />} />
         <Route path="/staff/category" element={<StaffCategory />} />
+        <Route path="/admin/users" element={<AdminUsers />} />
       </Routes>
     </>
   );
