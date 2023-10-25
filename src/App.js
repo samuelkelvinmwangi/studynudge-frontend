@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
 import Home from "./routes/Home";
 import About from "./routes/About";
@@ -12,6 +12,19 @@ import { Route, Routes } from "react-router-dom";
 
 
 function App() {
+
+  const [currentUser, setcurrentUser] = useState('');
+
+  useEffect(()=>{
+    fetch('/login')
+    .then(res => {
+      if(res.ok){
+        res.json().then(user => setcurrentUser)
+      }
+    })
+  },[])
+
+  if(!currentUser) return <Login setcurrentUser={setcurrentUser} />
   return (
     <>
       <Routes>
