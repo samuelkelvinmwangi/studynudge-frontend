@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './AdminDashboard.css';
+import Sidebar from './SideBar';
 
 
 const AdminDashboard = () => {
@@ -8,15 +9,15 @@ const AdminDashboard = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("https://snudgeapi.onrender.com/users")
+    fetch("http://localhost:3000/users")
       .then((r) => r.json())
-      .then(setUsers);
+      .then(data => setUsers(data));
   }, []);
 
   useEffect(() => {
-    fetch("https://snudgeapi.onrender.com/categories")
+    fetch("http://localhost:3000/categories")
       .then((r) => r.json())
-      .then(setCategories);
+      .then(data => setCategories(data));
   }, []);
 
  return (
@@ -97,8 +98,7 @@ const AdminDashboard = () => {
  
       </div>
     </div>
-    
  );
-};
+}
 
 export default AdminDashboard;
