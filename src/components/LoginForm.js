@@ -4,25 +4,26 @@ import { useState} from 'react';
 
 
 const LoginForm = () => {
-  const [emailAddress, setEmailAddress] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [ setError] = useState(null);
+  const [error, setError] = useState(null);
 
   const handleLogin = async () => {
+    
     const response = await fetch('https://snudgeapi.onrender.com/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ emailAddress, password }),
+      body: JSON.stringify({ email, password }),
     });
 
     if (response.status === 200) {
       const data = await response.json();
       localStorage.setItem('token', data.token);
-      window.location.href = '/dashboard';
+      console.log('login');
     } else {
-      setError('Invalid emailAddress or password');
+      setError('Invalid Email or password');
     }
     
   };
@@ -30,7 +31,7 @@ const LoginForm = () => {
   <div className='body-2' >
     <div className='cover'>
         <h1>Welcome Back</h1>
-        <input className='input' type='text' placeholder='Emailaddress' value={emailAddress} onChange={(e) => setEmailAddress(e.target.value)}/>
+        <input className='input' type='text' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)}/>
         <input className='input' type='password' placeholder='password'  value={password} onChange={(e) => setPassword(e.target.value)}/>
 
         <div className='login-btn' onClick={handleLogin}>Login</div>
