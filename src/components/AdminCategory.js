@@ -9,9 +9,9 @@ const AdminCategory = () => {
   const [description, setDescription] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3000/category")
+    fetch("http://snudgeapi.onrender.com/category")
       .then((r) => r.json())
-      .then(setCategories);
+      .then(data => setCategories(data));
   }, []);
 
   function handleSubmit(e) {
@@ -45,7 +45,7 @@ return (
             placeholder=""
             />
         </div>
-    <h1>Categories</h1>
+    <h1 id='h1'>Categories</h1>
     <button className='newcategory' onClick={toggleForm}>Create Category</button>
     
     <table>
@@ -70,7 +70,7 @@ return (
   </div>
   {showForm && (
       <form onSubmit={handleSubmit}>
-        <h1>Add Category</h1>
+        <h1 id='h1'>Add Category</h1>
           <input type="text" className="categoryName" placeholder='Name of Category' value={categoryName} onChange={(e) => setCategoryName(e.target.value)} />
           <input type="text" className="description" placeholder='Description' value={description} onChange={(e) => setDescription(e.target.value)} />
         <button className='dltBtn'>Delete Category</button>

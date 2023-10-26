@@ -39,13 +39,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<h1>Home</h1>} />
-<<<<<<< Updated upstream
-        {/* <Route path="/content" element={<ContentPage />} />
-        <Route path="/content/:id" element={ <ContentView /> } /> */}
-=======
         {/* <Route path="/content" element={<ContentPage />} /> */}
         {/* <Route path="/content/:id" element={ <ContentView /> } /> */}
->>>>>>> Stashed changes
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/category" element={<AdminCategory />} />
         <Route path="/staff" element={<Staff />} />

@@ -19,6 +19,10 @@ const Navbar = () => {
     navigate("/admin/users");
   };
 
+  const handleLogout = () => {
+    navigate("/");
+  };
+
  return (
     <div className="navbar">
       <h1>Snudge</h1>
@@ -30,7 +34,7 @@ const Navbar = () => {
         <button>Content</button>
         <button>Profile</button>
         <div className='navbar-bottom'>
-        <button>Logout</button>
+        <button onclick={handleLogout}>Logout</button>
         </div>
       </div>
       </div>
