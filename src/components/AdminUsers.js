@@ -33,9 +33,11 @@ const AdminUsers = () => {
 function handleSubmit(e) {
   e.preventDefault();
   const formData = {
+    full_name: userName,
     username: userName,
     email: userEmail,
-    role: role
+    role: role,
+    password: '123456'
   };
   fetch("https://snudgeapi.onrender.com/users", {
     method: "POST",
