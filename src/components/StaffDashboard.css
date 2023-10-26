@@ -39,6 +39,7 @@
     border-radius: 10px;
     /* width: 250px; */
     align-items: center;
+    height: fit-content;
   }
   
   .tables {

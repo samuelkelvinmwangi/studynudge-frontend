@@ -26,7 +26,7 @@ const LoginForm = () => {
             //     setErrorMessage(data.error);
             // }
             console.log('My response: ', data);
-            window.location.href = '/dashboard';
+            window.location.href = '/admin';
         })
         .catch(error => {
             setError(error);
