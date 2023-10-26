@@ -68,7 +68,7 @@ return (
   </div>
   {showForm && (
       <form onSubmit={handleSubmit}>
-        <h1>Add Category</h1>
+        <h1 id="h1">Add Category</h1>
           <input type="text" className="categoryName" placeholder='Name of Category' value={categoryName} onChange={(e) => setCategoryName(e.target.value)}/>
           <input type="text" className="description" placeholder='Description' value={description} onChange={(e) => setDescription(e.target.value)} />
         <button className='dltBtn'>Delete Category</button>

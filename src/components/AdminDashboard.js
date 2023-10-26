@@ -67,14 +67,14 @@ const AdminDashboard = () => {
       <td>View All</td>
     </tr>
     <tbody>
-    {/* {users.map((user) => ( */}
+    {users.map((user) => (
           <tr>
-            <td>user.full_name</td>
-            <td>user.email</td>
+            <td>{user.full_name}</td>
+            <td>{user.email}</td>
             <td>05/10/2023</td>
             <td>05/10/2023</td>
           </tr>
-        {/* ))} */}
+         ))} 
     </tbody>
  </table>
  </div>
@@ -88,12 +88,12 @@ const AdminDashboard = () => {
    <th>New Categories</th>
    <td>View All</td>
  </tr>
- {/* {categories.map((category) => ( */}
+ {categories.map((category) => (
         <tr>
           <td>category.category_name</td>
           <td>05/10/2023</td>
         </tr>
-  {/* ))} */}
+ ))}
 </table>
  </div>
  

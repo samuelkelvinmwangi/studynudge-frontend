@@ -87,14 +87,14 @@ return (
           </tr>
         </thead>
         <tbody>
-        {/* {users.map((user) => ( */}
+        {users.map((user) => (
           <tr>
             <td>user.full_name</td>
             <td>user.email</td>
             <td>05/10/2023</td>
             <td>05/10/2023</td>
           </tr>
-        {/* ))} */}
+         ))} 
       </tbody>
       </table>
     )}
@@ -110,14 +110,14 @@ return (
           </tr>
         </thead>
         <tbody>
-        {/* {users.map((user) => ( */}
+        {users.map((user) => (
           <tr>
             <td>user.full_name</td>
             <td>user.email</td>
             <td>05/10/2023</td>
             <td>05/10/2023</td>
           </tr>
-        {/* ))} */}
+        ))} 
       </tbody>
       </table>
     )}
@@ -132,14 +132,14 @@ return (
           </tr>
         </thead>
         <tbody>
-        {/* {users.map((user) => ( */}
+        {users.map((user) => (
           <tr>
             <td>user.full_name</td>
             <td>user.email</td>
             <td>05/10/2023</td>
             <td>05/10/2023</td>
           </tr>
-        {/* ))} */}
+         ))}
       </tbody>
       </table>
     )}
