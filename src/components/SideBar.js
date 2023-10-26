@@ -14,6 +14,11 @@ const Sidebar = () => {
   const handleDashboard = () => {
     navigate("/staff");
   };
+
+  const handleLogout= () => {
+    navigate("/");
+  };
+
  return (
  
     <div className="sidebar">
@@ -25,7 +30,7 @@ const Sidebar = () => {
         <button>Content</button>
         <button>Profile</button>
         <div className='sidebar-bottom'>
-        <button>Logout</button>
+        <button onClick={handleLogout}>Logout</button>
         </div>
       </div>
       </div>

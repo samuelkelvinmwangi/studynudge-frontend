@@ -20,7 +20,7 @@ const StaffDashboard = () => {
   }, []);
 
  return (
-    <div>
+    <div className='all'>
       <div  className="dashboard">
       <div className="col-10">
             <input
@@ -35,13 +35,17 @@ const StaffDashboard = () => {
       <div className='stats'>
         <div className='users'>
           <h2>Users</h2>
+          <div className='sidelining'>
           <p>{users.length}<br></br>New Users</p>
           <p>{users.length}<br></br>Total Users</p>
         </div>
+        </div>
         <div className='posts'>
           <h2>Posts</h2>
+          <div className='side-by-side'>
           <p>10<br></br>New Posts</p>
           <p>89<br></br>Total Posts</p>
+          </div>
         </div>
       </div>
       <div className='tables'>

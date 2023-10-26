@@ -1,3 +1,9 @@
+.all{
+  margin-left: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: calc(100vw - 200px);
+}
 .dashboard {
     display: flex;
     justify-content: space-between;
@@ -12,11 +18,12 @@
     margin-top: 10rem;
     background-color: #F4F6F8;
     color: black;
-    
+    margin-left: -3000px;
+    margin-right: 700px;
     
   }
   
-  .dashboard .col-10 {
+  /* .dashboard .col-10 {
     flex-basis: 80%;
   }
   
@@ -24,12 +31,29 @@
     width: 100%;
     padding: 10px;
    
-  }
+  } */
   
   .stats {
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
+    justify-content: center;
+    text-align: left;
+    gap: 10px;
+    margin-left: 10px;
+    
+  }
+
+  .side-by-side{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .sidelining{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
   }
   
   .stats .users, .stats .posts {
@@ -37,17 +61,32 @@
     color: white;
     padding: 20px;
     border-radius: 10px;
-    /* width: 250px; */
-    align-items: center;
+    width: 200px;
+    height: 100px;
+    margin-bottom: 30px;
+    /* align-items: center; */
+  }
+
+  .stats .users{
+    margin-left: 250px;
   }
   
   .tables {
-    padding: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    margin-right: 1000px;
+    
   }
   
   .tables table {
-    width: 100%;
+    width: 50px;
     margin-bottom: 20px;
+    padding: -20px;
+    border-color: white;
+    background-color:#FFFFFF; 
   }
   
   .tables th, .tables td {
