@@ -13,11 +13,11 @@ function TopBar() {
             <h2 className="page-title">Content</h2>
             <div className="topbar-icon-container">
                 <div className="topbar-icons">
-                    <i id="add-button">
-                        <FontAwesomeIcon icon={faPlus} onClick={handleTopBarIconClick}/>
-                    </i>
                     <i id="search-button">
                         <FontAwesomeIcon icon={faMagnifyingGlass} onClick={handleTopBarIconClick}/>
+                    </i>
+                    <i id="add-button">
+                        <FontAwesomeIcon icon={faPlus} onClick={handleTopBarIconClick}/>
                     </i>
                     <i id="notifications-button">
                         <FontAwesomeIcon icon={faBell} onClick={handleTopBarIconClick}/>
