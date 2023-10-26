@@ -14,6 +14,7 @@ import Staff from "./routes/Staff";
 import StaffCategory from "./routes/StaffCategory";
 import AdminUsers from "./routes/AdminUsers";
 import AdminDashboard from "./components/AdminDashboard";
+// import AdminContent from "./routes/AdminContent";
 
 function App() {
 
@@ -38,14 +39,20 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<h1>Home</h1>} />
+<<<<<<< Updated upstream
         {/* <Route path="/content" element={<ContentPage />} />
         <Route path="/content/:id" element={ <ContentView /> } /> */}
+=======
+        {/* <Route path="/content" element={<ContentPage />} /> */}
+        {/* <Route path="/content/:id" element={ <ContentView /> } /> */}
+>>>>>>> Stashed changes
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/category" element={<AdminCategory />} />
         <Route path="/staff" element={<Staff />} />
         <Route path="/staff/category" element={<StaffCategory />} />
         <Route path="/admin/users" element={<AdminUsers />} />
         <Route path="/dashboard" element={<AdminDashboard />} />
+        {/* <Route path="/admin/content" element={<AdminContent />} /> */}
       </Routes>
     </>
   );

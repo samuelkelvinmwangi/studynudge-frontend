@@ -9,7 +9,7 @@ const AdminCategory = () => {
   const [description, setDescription] = useState("");
 
   useEffect(() => {
-    fetch("https://snudgeapi.onrender.com/categories")
+    fetch("http://localhost:3000/category")
       .then((r) => r.json())
       .then(setCategories);
   }, []);
@@ -20,7 +20,7 @@ const AdminCategory = () => {
       category_name: categoryName,
       description: description
     };
-    fetch("https://snudgeapi.onrender.com/categories", {
+    fetch("https://snudgeapi.onrender.com/category", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -63,7 +63,7 @@ return (
           <td>05/10/2023</td>
           <td>05/10/2023</td>
         </tr>
-  {/* ))} */}
+  {/* ))}  */}
   
 </tbody>
 </table>

@@ -9,13 +9,14 @@ const AdminDashboard = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/users")
+    fetch("https://snudgeapi.onrender.com/users")
       .then((r) => r.json())
       .then(data => setUsers(data));
+      console.log(users)
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3000/categories")
+    fetch("https://snudgeapi.onrender.com/users")
       .then((r) => r.json())
       .then(data => setCategories(data));
   }, []);
@@ -66,14 +67,14 @@ const AdminDashboard = () => {
       <td>View All</td>
     </tr>
     <tbody>
-    {users.map((user) => (
+    {/* {users.map((user) => ( */}
           <tr>
-            <td>{user.full_name}</td>
-            <td>{user.email}</td>
+            <td>user.full_name</td>
+            <td>user.email</td>
             <td>05/10/2023</td>
             <td>05/10/2023</td>
           </tr>
-        ))}
+        {/* ))} */}
     </tbody>
  </table>
  </div>
