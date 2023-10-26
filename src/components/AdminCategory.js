@@ -57,13 +57,13 @@ return (
     </tr>
   </thead>
   <tbody>
-  {/* {categories.map((category) => ( */}
+  {categories.map((category) => (
         <tr>
-          <td>category.category_name</td>
+          <td>{category.category_name}</td>
           <td>05/10/2023</td>
           <td>05/10/2023</td>
         </tr>
-  {/* ))}  */}
+  ))}
   
 </tbody>
 </table>
