@@ -14,7 +14,7 @@ const AdminUsers = () => {
   useEffect(() => {
     fetch("https://snudgeapi.onrender.com/users")
       .then((r) => r.json())
-      .then(setUsers);
+      .then(data => setUsers(data));
   }, []);
 
  const toggleForm = () => {
@@ -89,8 +89,8 @@ return (
         <tbody>
         {users.map((user) => (
           <tr>
-            <td>user.full_name</td>
-            <td>user.email</td>
+            <td>{user.full_name}</td>
+            <td>{user.email}</td>
             <td>05/10/2023</td>
             <td>05/10/2023</td>
           </tr>
