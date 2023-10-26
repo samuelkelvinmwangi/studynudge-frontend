@@ -1,0 +1,27 @@
+.topbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.topbar-icon-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 18px;
+}
+
+.topbar-icons {
+    display: flex;
+    flex-direction: row;
+}
+
+.topbar-icons i {
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+.page-title {
+    margin: 12px;
+}

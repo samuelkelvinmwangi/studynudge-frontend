@@ -5,12 +5,9 @@ import About from "./routes/About";
 import Contact from "./routes/Contact";
 import Login from "./routes/Login";
 import Posts from "./routes/Posts";
-
 import { Route, Routes } from "react-router-dom";
-
-
-
-
+import ContentPage from "./pages/ContentPage/ContentPage";
+import ContentView from "./components/ContentView/ContentView";
 
 function App() {
 
@@ -34,6 +31,9 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/" element={<h1>Home</h1>} />
+        <Route path="/content" element={<ContentPage />} />
+        <Route path="/content/:id" element={ <ContentView /> } />
       </Routes>
     </>
   );

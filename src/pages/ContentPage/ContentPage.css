@@ -1,0 +1,18 @@
+.content-page-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-tab-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@media (max-width: 650px) {
+
+    .content-tab-container {
+        margin-left: 12px;
+        justify-content: start;
+    }
+}
