@@ -18,6 +18,11 @@ const Sidebar = () => {
   const handleLogout = () => {
     navigate("/");
   };
+
+  function openContentPage() {
+    navigate("/content");
+  }
+
  return (
  
     <div className="sidebar">
@@ -26,8 +31,8 @@ const Sidebar = () => {
       <div className="sidebar-right">
       <button onClick={handleDashboard}>Dashboard</button>
         <button onClick={handleCategory}>Categories</button>
-        <button>Content</button>
-        <button>Profile</button>
+        <button onClick={openContentPage}>Content</button>
+        {/* <button>Profile</button> */}
         <div className='sidebar-bottom'>
         <button onclick={handleLogout}>Logout</button>
         </div>

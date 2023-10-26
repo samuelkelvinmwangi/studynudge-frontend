@@ -23,6 +23,10 @@ const Navbar = () => {
     navigate("/");
   };
 
+  function openContentPage() {
+    navigate("/content");
+  }
+
  return (
     <div className="navbar">
       <h1>Snudge</h1>
@@ -31,8 +35,8 @@ const Navbar = () => {
         <button onClick={handleDashboard}>Dashboard</button>
         <button onClick={handleCategory}>Categories</button>
         <button onClick={handleUsers}>Users</button>
-        <button>Content</button>
-        <button>Profile</button>
+        <button onClick={openContentPage}>Content</button>
+        {/* <button>Profile</button> */}
         <div className='navbar-bottom'>
         <button onclick={handleLogout}>Logout</button>
         </div>
