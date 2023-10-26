@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Modal.css';
 
 function Modal({ isModalOpen = false, setIsModalOpen }) {
@@ -6,6 +6,7 @@ function Modal({ isModalOpen = false, setIsModalOpen }) {
   const [body, setBody] = useState('');
   const [category, setCategory] = useState('');
   const [file, setFile] = useState(null);
+  const [categories, setCategories] = useState([]);
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -28,18 +29,36 @@ function Modal({ isModalOpen = false, setIsModalOpen }) {
   };
 
   const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
+    setFile(event.target.value);
   };
 
   const handleSubmit = (event) => {
+    
     event.preventDefault();
-    // Handle form submission logic here
-    console.log('Title:', title);
-    console.log('Body:', body);
-    console.log('Category:', category);
-    console.log('File:', file);
+
+    const formData = {
+      title: title,
+      body: body,
+      category_id: category,
+      user_id: 1,
+      content_urls: [file]
+    };
+
+    fetch("https://snudgeapi.onrender.com/contents", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
     handleCloseModal();
   };
+
+  useEffect(() => {
+    fetch("https://snudgeapi.onrender.com/categories")
+      .then((r) => r.json())
+      .then(data => setCategories(data));
+  }, []);
 
   return (
     <div>
@@ -81,17 +100,21 @@ function Modal({ isModalOpen = false, setIsModalOpen }) {
                 required
               >
                 <option value="">Select Category</option>
-                <option value="category1">Category 1</option>
-                <option value="category2">Category 2</option>
-                <option value="category3">Category 3</option>
+                {categories.map((category) => (
+                  <option key={category.id} value={category.id}>
+                    {category.category_name}
+                  </option>
+                ))}
               </select>
 
-              <label htmlFor="fileUpload">File Upload:</label>
+              <label htmlFor="fileUpload">File:</label>
               <input
-                type="file"
-                id="fileUpload"
-                name="fileUpload"
+                type="text"
+                id="title"
+                name="title"
+                value={file}
                 onChange={handleFileChange}
+                required
               />
 
               <button type="submit">Create</button>
