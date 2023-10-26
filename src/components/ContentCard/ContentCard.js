@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMessage, faShareNodes, faBookmark, faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
 
-function ContentCard({ id, title, url, username, created_at, content = '', content_type }) {
+function ContentCard({ id, title, url, username, created_at = '2 days ago', content = '', content_type }) {
 
     const mediaRef = useRef(null);
     const navigate = useNavigate();
@@ -92,6 +92,11 @@ function ContentCard({ id, title, url, username, created_at, content = '', conte
                         <FontAwesomeIcon icon={faShareNodes} />
                         <FontAwesomeIcon icon={faBookmark} />
                     </div>
+                    {
+                        content !== '' ? (
+                            <p>{ content }</p>
+                        ) : null
+                    }
                 </div>
             </div>
         </div>
