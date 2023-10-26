@@ -1,0 +1,84 @@
+.form-control {
+    width: 20cm;
+    height: 2cm;
+    border: 4px;
+}
+
+h1 {
+    margin-top: 20px;
+    margin-left: 2cm;
+}
+.newuser {
+    background-color: rgb(11, 96, 216);
+    padding: 5px;
+}
+
+table {
+    width: 50%;
+    margin-top: 2cm;
+}
+
+   
+   h1 {
+    margin-top: 0;
+    margin-bottom: 15px;
+   }
+
+   button.newuser {
+    margin-left: auto;
+    margin-right: 0;
+    margin-left: 80%;
+   }
+
+   th, td {
+    padding: 8px;
+    text-align: left; /* Align text to the left */
+  }
+
+  .userName {
+    display: block;
+    margin-top: 10px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+
+   .dltBtn {
+    color: red;
+    padding: 7px;
+    width: 5cm;
+    margin-bottom: 1cm;
+   }
+
+   .newUser {
+    width: 5cm;
+    height: 1cm;
+    background-color: rgb(14, 138, 215);
+   }
+
+
+
+   .userName, .email, .select {
+    height: 50px;
+    margin-bottom: 0.4cm;
+    background-color: grey;
+    width: 9cm;
+   }
+
+
+   .email, .userName, .newUser {
+    border-radius: 10px;
+   }
+
+   .button.active {
+    border-bottom: 5px solid  rgb(157, 39, 221);
+    color: rgb(157, 39, 221);
+   }
+
+   .navRole {
+    display: flex;
+    justify-content: space-between;
+   }
