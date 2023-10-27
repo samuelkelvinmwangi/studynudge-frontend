@@ -4,7 +4,7 @@ import Modal from "../../components/Modal/Modal";
 import './ContentPage.css';
 import { useState } from 'react';
 
-function ContentPage() {
+function ContentPage( { userId = 1} ) {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -13,7 +13,7 @@ function ContentPage() {
             <TopBar isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>
             <div className="content-tab-container">
                 {
-                    isModalOpen ? <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>
+                    isModalOpen ? <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} userId={userId} />
                     : null
                 }
                 <Content />
