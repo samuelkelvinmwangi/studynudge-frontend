@@ -3,7 +3,7 @@ import './Content.css';
 import ContentCard from '../ContentCard/ContentCard';
 import { content } from '../../sampledata';
 
-function Content() {
+function Content({ userRole }) {
     const [activeTab, setActiveTab] = useState('video');
 
     const handleTabClick = (tab) => {
@@ -32,19 +32,19 @@ function Content() {
                     {
                         activeTab === 'video' &&
                             content.content.filter((item) => item.content_type === 'video').map((item) => 
-                                <ContentCard key={item.id} id={item.id} title={item.title} url={item.url} username={item.username} created_at={item.created_at} content_type={activeTab}/>
+                                <ContentCard key={item.id} id={item.id} title={item.title} url={item.url} username={item.username} created_at={item.created_at} content_type={activeTab} userRole={userRole} />
                             )
                     }
                     {
                         activeTab === 'audio' &&
                             content.content.filter((item) => item.content_type === 'audio').map((item) => 
-                                <ContentCard key={item.id} id={item.id} title={item.title} url={item.url} username={item.username} created_at={item.created_at} content_type={activeTab}/>
+                                <ContentCard key={item.id} id={item.id} title={item.title} url={item.url} username={item.username} created_at={item.created_at} content_type={activeTab} userRole={userRole} />
                             )
                     }
                     {
                         activeTab === 'article' &&
                             content.content.filter((item) => item.content_type === 'article').map((item) => 
-                                <ContentCard key={item.id} id={item.id} title={item.title} url={item.url} username={item.username} created_at={item.created_at} content={item.content} content_type={activeTab}/>
+                                <ContentCard key={item.id} id={item.id} title={item.title} url={item.url} username={item.username} created_at={item.created_at} content={item.content} content_type={activeTab} userRole={userRole} />
                             )
                     }
                 </div>
