@@ -4,6 +4,7 @@ import './Modal.css';
 function Modal({ isModalOpen = false, setIsModalOpen }) {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
+  const [contentType, setContentType] = useState('');
   const [category, setCategory] = useState('');
   const [file, setFile] = useState(null);
   const [categories, setCategories] = useState([]);
@@ -24,6 +25,10 @@ function Modal({ isModalOpen = false, setIsModalOpen }) {
     setBody(event.target.value);
   };
 
+  const handleContentTypeChange = (event) => {
+    setContentType(event.target.value);
+  };
+
   const handleCategoryChange = (event) => {
     setCategory(event.target.value);
   };
@@ -39,6 +44,7 @@ function Modal({ isModalOpen = false, setIsModalOpen }) {
     const formData = {
       title: title,
       body: body,
+      content_type: contentType,
       category_id: category,
       user_id: 1,
       content_urls: [file]
@@ -93,6 +99,20 @@ function Modal({ isModalOpen = false, setIsModalOpen }) {
                   placeholder='Description or article'
                   required
                 ></textarea>
+
+                <label htmlFor="contentType">Content Type:</label>
+                <select
+                  id="contentType"
+                  name="contentType"
+                  value={contentType}
+                  onChange={handleContentTypeChange}
+                  required
+                >
+                  <option value="">Select content type</option>
+                  <option value="video">Video</option>
+                  <option value="audio">Audio</option>
+                  <option value="article">Article</option>
+                </select>
 
                 <label htmlFor="category">Category:</label>
                 <select
