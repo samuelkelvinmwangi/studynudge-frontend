@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 import './ContentCard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMessage, faShareNodes, faBookmark, faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
+import { faMessage, faShareNodes, faBookmark, faPlay, faPause, faPenToSquare, faCheck, faFlag, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
 
-function ContentCard({ id, title, url, username, created_at, content = '', content_type }) {
+function ContentCard({ id, title, url, username, created_at, content = '', content_type, userRole }) {
 
     const mediaRef = useRef(null);
     const navigate = useNavigate();
@@ -88,9 +88,26 @@ function ContentCard({ id, title, url, username, created_at, content = '', conte
                     }
                     
                     <div className='content-icons'>
-                        <FontAwesomeIcon icon={faMessage} />
-                        <FontAwesomeIcon icon={faShareNodes} />
-                        <FontAwesomeIcon icon={faBookmark} />
+                        {
+                            userRole === 'student' ?
+                            (
+                                <>
+                                    <FontAwesomeIcon icon={faMessage} />
+                                    <FontAwesomeIcon icon={faShareNodes} />
+                                    <FontAwesomeIcon icon={faBookmark} />
+                                    {/* TODO display this icon if the user create this post <FontAwesomeIcon icon={faTrash} /> */}
+                                </>
+                            ) : (
+                                <>
+                                    <FontAwesomeIcon icon={faPenToSquare} />
+                                    <FontAwesomeIcon icon={faCheck} />
+                                    <FontAwesomeIcon icon={faFlag} />
+                                    {
+                                        userRole === 'admin' && <FontAwesomeIcon icon={faTrash} />
+                                    }
+                                </>
+                            )
+                        }
                     </div>
                 </div>
             </div>
