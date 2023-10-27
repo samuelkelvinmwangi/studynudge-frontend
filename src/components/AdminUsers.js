@@ -63,19 +63,19 @@ return (
     <button className='newuser' onClick={toggleForm}>Create User</button>
 
     <div className='navRole'>
-        <button
+        <div
         id="Student"
         className={`button ${active === 'Student' ? 'active' : ''}`}
-        onClick={(e) => {changeDisplay('Student'); handleClick(e);}}>Student</button>
-        <button 
+        onClick={(e) => {changeDisplay('Student'); handleClick(e);}}>Student</div>
+        <div 
         id="Admin"
         className={`button ${active === 'Admin' ? 'active' : ''}`}
         onClick={(e) => {changeDisplay('Admin'); handleClick(e)}}>Admin
-        </button>
-        <button
+        </div>
+        <div
         id="Staff"
         className={`button ${active === 'Staff' ? 'active' : ''}`}
-        onClick={(e) => {changeDisplay('Staff'); handleClick(e)}}>Staff</button>
+        onClick={(e) => {changeDisplay('Staff'); handleClick(e)}}>Staff</div>
       </div>
     
     {display === 'Admin' && (
