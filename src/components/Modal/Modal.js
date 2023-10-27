@@ -6,7 +6,8 @@ function Modal({ isModalOpen = false, setIsModalOpen }) {
   const [body, setBody] = useState('');
   const [contentType, setContentType] = useState('');
   const [category, setCategory] = useState('');
-  const [file, setFile] = useState(null);
+  const [mediaFile, setMediaFile] = useState('');
+  const [thumbnail, setThumbnail] = useState('');
   const [categories, setCategories] = useState([]);
 
   const handleOpenModal = () => {
@@ -33,8 +34,12 @@ function Modal({ isModalOpen = false, setIsModalOpen }) {
     setCategory(event.target.value);
   };
 
-  const handleFileChange = (event) => {
-    setFile(event.target.value);
+  const handleMediaFileChange = (event) => {
+    setMediaFile(event.target.value);
+  };
+
+  const handleThumbnailChange = (event) => {
+    setThumbnail(event.target.value);
   };
 
   const handleSubmit = (event) => {
@@ -47,7 +52,7 @@ function Modal({ isModalOpen = false, setIsModalOpen }) {
       content_type: contentType,
       category_id: category,
       user_id: 1,
-      content_urls: [file]
+      content_urls: [mediaFile, thumbnail],
     };
 
     fetch("https://snudgeapi.onrender.com/contents", {
@@ -132,11 +137,21 @@ function Modal({ isModalOpen = false, setIsModalOpen }) {
 
                 <input
                   type="text"
-                  id="title"
-                  name="title"
-                  value={file}
-                  onChange={handleFileChange}
+                  id="media-file"
+                  name="mediaFile"
+                  value={mediaFile}
+                  onChange={handleMediaFileChange}
                   placeholder='URL to the video or audio'
+                  required
+                />
+
+                <input
+                  type="text"
+                  id="thumbnail"
+                  name="thumbnail"
+                  value={thumbnail}
+                  onChange={handleThumbnailChange}
+                  placeholder='URL to the thumbnail image'
                   required
                 />
 
