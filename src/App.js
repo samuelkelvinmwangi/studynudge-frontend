@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import "./index.css";
 import Home from "./routes/Home";
 import About from "./routes/About";
