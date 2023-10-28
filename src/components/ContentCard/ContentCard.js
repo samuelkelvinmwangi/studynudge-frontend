@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMessage, faShareNodes, faBookmark, faPlay, faPause, faPenToSquare, faCheck, faFlag, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
 
-function ContentCard({ id, title, url, username, created_at, content = '', content_type, userRole }) {
+function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at = '2 days ago', content = '', content_type, userRole }) {
 
     const mediaRef = useRef(null);
     const navigate = useNavigate();
@@ -31,7 +31,7 @@ function ContentCard({ id, title, url, username, created_at, content = '', conte
     }
 
     function openContentView() {
-        navigate(`/content/${id}`, { state: { id, title, url, username, created_at, content, content_type } });
+        navigate(`/content/${id}`, { state: { id, title, mediaUrl, thumbnailUrl, username, created_at, content, content_type, userRole } });
     }
 
     function openUserProfile() {
@@ -53,9 +53,9 @@ function ContentCard({ id, title, url, username, created_at, content = '', conte
                         className='content-title'
                         onClick={openContentView}>{ title }</h5>
                     {
-                        content !== '' ? (
+                        content_type === 'article' ? (
                             <div className='image-container' onClick={openContentView}>
-                                <img className='content-image' src={ url } alt="Content" />
+                                <img className='content-image' src={ thumbnailUrl } alt="Content" />
                             </div>
                         )
                         : (
@@ -67,20 +67,20 @@ function ContentCard({ id, title, url, username, created_at, content = '', conte
                                     isPlaying ? 
                                         showPauseButton ? (
                                             <i id="pause-button">
-                                                <FontAwesomeIcon icon={faPause} onClick={handleVideo}/>
+                                                <FontAwesomeIcon className='pause-icon' icon={faPause} onClick={handleVideo}/>
                                             </i>
                                         ) : null
                                     : (
                                         <i id="play-button">
-                                            <FontAwesomeIcon icon={faPlay} onClick={handleVideo}/>
+                                            <FontAwesomeIcon className='play-icon' icon={faPlay} onClick={handleVideo}/>
                                         </i>
                                     )
                                 }
                                 <video
                                     ref={mediaRef}
                                     className='content-media'
-                                    src={ content_type === 'audio' ? appUrl + url : url }
-                                    poster={ content_type === 'audio' ? 'https://img.freepik.com/free-vector/hand-drawn-flat-podcast-cover-template_23-2149433228.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1697846400&semt=ais' : ''}>
+                                    src={ mediaUrl }
+                                    poster={ thumbnailUrl }>
                                     Your browser does not support the video tag.
                                 </video>
                             </div>

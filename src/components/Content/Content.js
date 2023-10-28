@@ -1,14 +1,21 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Content.css';
 import ContentCard from '../ContentCard/ContentCard';
-import { content } from '../../sampledata';
+//import { content } from '../../sampledata';
 
 function Content({ userRole }) {
     const [activeTab, setActiveTab] = useState('video');
+    const [content, setContent] = useState([]);
 
     const handleTabClick = (tab) => {
         setActiveTab(tab);
     };
+
+    useEffect(() => {
+        fetch('https://snudgeapi.onrender.com/contents')
+            .then(r => r.json())
+            .then(data => setContent(data));
+        }, []);
 
     return (
         <div className='content-tabs'>
@@ -31,20 +38,20 @@ function Content({ userRole }) {
                     */}
                     {
                         activeTab === 'video' &&
-                            content.content.filter((item) => item.content_type === 'video').map((item) => 
-                                <ContentCard key={item.id} id={item.id} title={item.title} url={item.url} username={item.username} created_at={item.created_at} content_type={activeTab} userRole={userRole} />
+                            content.filter((item) => item.content_type === 'video').map((item) => 
+                                <ContentCard key={item.id} id={item.id} title={item.title} mediaUrl={item.content_media[0].link} thumbnailUrl={item.content_media[1].link} username={item.user.username} created_at={item.created_at} content={item.body} content_type={activeTab} userRole={userRole} />
                             )
                     }
                     {
                         activeTab === 'audio' &&
-                            content.content.filter((item) => item.content_type === 'audio').map((item) => 
-                                <ContentCard key={item.id} id={item.id} title={item.title} url={item.url} username={item.username} created_at={item.created_at} content_type={activeTab} userRole={userRole} />
+                            content.filter((item) => item.content_type === 'audio').map((item) => 
+                                <ContentCard key={item.id} id={item.id} title={item.title} mediaUrl={item.content_media[0].link} thumbnailUrl={item.content_media[1].link} username={item.user.username} created_at={item.created_at} content={item.body} content_type={activeTab} userRole={userRole} />
                             )
                     }
                     {
                         activeTab === 'article' &&
-                            content.content.filter((item) => item.content_type === 'article').map((item) => 
-                                <ContentCard key={item.id} id={item.id} title={item.title} url={item.url} username={item.username} created_at={item.created_at} content={item.content} content_type={activeTab} userRole={userRole} />
+                            content.filter((item) => item.content_type === 'article').map((item) => 
+                                <ContentCard key={item.id} id={item.id} title={item.title} mediaUrl={item.content_media[0].link} thumbnailUrl={item.content_media[1].link} username={item.user.username} created_at={item.created_at} content={item.body} content_type={activeTab} userRole={userRole} />
                             )
                     }
                 </div>
