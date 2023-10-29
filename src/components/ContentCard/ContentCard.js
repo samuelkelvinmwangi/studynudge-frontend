@@ -13,7 +13,7 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
     const [isPlaying, setIsPlaying] = useState(false);
     const [showPauseButton, setShowPauseButton] = useState(false);
     const appUrl = process.env.PUBLIC_URL;
-    const [showCommentInput, setShowCommentInput] = useState(false);
+    const [showCommentSection, setShowCommentSection] = useState(false);
 
     const handleMouseEnter = () => {
         setShowPauseButton(true);
@@ -111,12 +111,8 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
         }
     }
 
-    function handleShowingCommentInput() {
-        if (showCommentInput) {
-            setShowCommentInput(false);
-        } else {
-            setShowCommentInput(true);
-        }
+    function handleShowingCommentSection() {
+        setShowCommentSection(!showCommentSection);
     }
 
     return (
@@ -173,7 +169,7 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
                             userRole === 'student' ?
                             (
                                 <>
-                                    <FontAwesomeIcon className="font-awesome-icon" icon={faMessage} onClick={handleShowingCommentInput}/>
+                                    <FontAwesomeIcon className="font-awesome-icon" icon={faMessage} onClick={handleShowingCommentSection}/>
                                     <FontAwesomeIcon className="font-awesome-icon" icon={faShareNodes} />
                                     <FontAwesomeIcon className="font-awesome-icon" icon={faBookmark} />
                                     {/* TODO display this icon if the user create this post <FontAwesomeIcon className="font-awesome-icon" icon={faTrash} /> */}
@@ -192,7 +188,7 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
                     </div>
 
                     {
-                        showCommentInput && (
+                        showCommentSection && (
                             <CommentInput id={id} userId={userId}/>
                         )
                     }
