@@ -32,19 +32,61 @@ function Content({ userRole, setIsModalOpen, content, setContent, setClickedCont
                     {
                         activeTab === 'video' &&
                             content.filter((item) => item.content_type === 'video').map((item) => 
-                                <ContentCard key={item.id} id={item.id} title={item.title} mediaUrl={item.content_media[0].link} thumbnailUrl={item.content_media[1].link} username={item.user.username} created_at={item.created_at} content={item.body} content_type={activeTab} userRole={userRole} setIsModalOpen={setIsModalOpen} setClickedContentId={setClickedContentId} setContent={setContent} />
+                                <ContentCard
+                                    key={item.id}
+                                    id={item.id}
+                                    title={item.title}
+                                    mediaUrl={item.content_media[0].link}
+                                    thumbnailUrl={item.content_media[1].link}
+                                    username={item.user.username}
+                                    created_at={item.created_at}
+                                    content={item.body}
+                                    content_type={activeTab}
+                                    userRole={userRole}
+                                    setIsModalOpen={setIsModalOpen}
+                                    setClickedContentId={setClickedContentId}
+                                    setContent={setContent}
+                                />
                             )
                     }
                     {
                         activeTab === 'audio' &&
                             content.filter((item) => item.content_type === 'audio').map((item) => 
-                                <ContentCard key={item.id} id={item.id} title={item.title} mediaUrl={item.content_media[0].link} thumbnailUrl={item.content_media[1].link} username={item.user.username} created_at={item.created_at} content={item.body} content_type={activeTab} userRole={userRole} setIsModalOpen={setIsModalOpen} setClickedContentId={setClickedContentId} setContent={setContent} />
+                                <ContentCard
+                                    key={item.id}
+                                    id={item.id}
+                                    title={item.title}
+                                    mediaUrl={item.content_media[0].link}
+                                    thumbnailUrl={item.content_media[1].link}
+                                    username={item.user.username}
+                                    created_at={item.created_at}
+                                    content={item.body}
+                                    content_type={activeTab}
+                                    userRole={userRole}
+                                    setIsModalOpen={setIsModalOpen}
+                                    setClickedContentId={setClickedContentId}
+                                    setContent={setContent}
+                                />
                             )
                     }
                     {
                         activeTab === 'article' &&
                             content.filter((item) => item.content_type === 'article').map((item) => 
-                                <ContentCard key={item.id} id={item.id} title={item.title} mediaUrl={item.content_media[0].link} thumbnailUrl={item.content_media[1].link} username={item.user.username} created_at={item.created_at} content={item.body} content_type={activeTab} userRole={userRole} setIsModalOpen={setIsModalOpen} setClickedContentId={setClickedContentId} setContent={setContent} />
+                                <ContentCard
+                                    key={item.id}
+                                    id={item.id}
+                                    title={item.title}
+                                    mediaUrl={item.content_media[0].link}
+                                    thumbnailUrl={item.content_media[1].link}
+                                    username={item.user.username}
+                                    created_at={item.created_at}
+                                    content={item.body}
+                                    content_type={activeTab}
+                                    userRole={userRole}
+                                    setIsModalOpen={setIsModalOpen}
+                                    setClickedContentId={setClickedContentId}
+                                    setContent={setContent}
+                                />
                             )
                     }
                 </div>
