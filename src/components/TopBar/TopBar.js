@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faMagnifyingGlass, faBell } from '@fortawesome/free-solid-svg-icons'
 import './TopBar.css';
 
-function TopBar({ isModalOpen, setIsModalOpen }) {
+function TopBar({ setIsModalOpen }) {
 
     function handleTopBarIconClick() {
         console.log('clicked');
