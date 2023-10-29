@@ -66,6 +66,28 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
         }
     }
 
+    function flagContent() {
+        const confirmation = window.confirm("Are you sure you want to proceed?");
+
+        if (confirmation) {
+            // User clicked "OK"
+            const formData = {
+                status: 'flagged'
+            };
+        
+            fetch(`${apiUrl}/contents/change_status/${id}`, {
+                method: 'PATCH',
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            })
+        } else {
+            // User clicked "Cancel"
+            console.log("User cancelled");
+        }
+    }
+
     return (
         <div className='card-container'>
             <div className='profile-pic-container' onClick={openUserProfile}>
@@ -129,7 +151,7 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
                                 <>
                                     <FontAwesomeIcon className="font-awesome-icon" icon={faPenToSquare} onClick={openContentEditor}/>
                                     <FontAwesomeIcon className="font-awesome-icon" icon={faCheck} onClick={approveContent}/>
-                                    <FontAwesomeIcon className="font-awesome-icon" icon={faFlag} />
+                                    <FontAwesomeIcon className="font-awesome-icon" icon={faFlag} onClick={flagContent}/>
                                     {
                                         userRole === 'admin' && <FontAwesomeIcon className="font-awesome-icon" icon={faTrash} />
                                     }
