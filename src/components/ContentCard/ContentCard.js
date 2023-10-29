@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMessage, faShareNodes, faBookmark, faPlay, faPause, faPenToSquare, faCheck, faFlag, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
 import { apiUrl } from '../../apiUrl';
+import CommentInput from '../Content/CommentInput/CommentInput';
 
 function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at = '2 days ago', content = '', content_type, userRole, setIsModalOpen, setClickedContentId, setContent }) {
 
@@ -12,6 +13,7 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
     const [isPlaying, setIsPlaying] = useState(false);
     const [showPauseButton, setShowPauseButton] = useState(false);
     const appUrl = process.env.PUBLIC_URL;
+    const [showCommentInput, setShowCommentInput] = useState(false);
 
     const handleMouseEnter = () => {
         setShowPauseButton(true);
@@ -109,6 +111,14 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
         }
     }
 
+    function handleShowingCommentInput() {
+        if (showCommentInput) {
+            setShowCommentInput(false);
+        } else {
+            setShowCommentInput(true);
+        }
+    }
+
     return (
         <div className='card-container'>
             <div className='profile-pic-container' onClick={openUserProfile}>
@@ -163,7 +173,7 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
                             userRole === 'student' ?
                             (
                                 <>
-                                    <FontAwesomeIcon className="font-awesome-icon" icon={faMessage} />
+                                    <FontAwesomeIcon className="font-awesome-icon" icon={faMessage} onClick={handleShowingCommentInput}/>
                                     <FontAwesomeIcon className="font-awesome-icon" icon={faShareNodes} />
                                     <FontAwesomeIcon className="font-awesome-icon" icon={faBookmark} />
                                     {/* TODO display this icon if the user create this post <FontAwesomeIcon className="font-awesome-icon" icon={faTrash} /> */}
@@ -180,6 +190,12 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
                             )
                         }
                     </div>
+
+                    {
+                        showCommentInput && (
+                            <CommentInput />
+                        )
+                    }
                 </div>
             </div>
         </div>
