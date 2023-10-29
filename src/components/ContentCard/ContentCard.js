@@ -113,6 +113,10 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
     }
 
     function handleShowingCommentSection() {
+        fetch(`${apiUrl}/contents_comments/${id}`)
+            .then(r => r.json())
+            .then(data => setComments(data))
+        ;
         setShowCommentSection(!showCommentSection);
     }
 
