@@ -88,6 +88,20 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
         }
     }
 
+    function deleteContent() {
+        const confirmation = window.confirm("Are you sure you want to proceed?");
+
+        if (confirmation) {
+        
+            fetch(`${apiUrl}/contents/${id}`, {
+                method: 'DELETE'
+            })
+        } else {
+            // User clicked "Cancel"
+            console.log("User cancelled");
+        }
+    }
+
     return (
         <div className='card-container'>
             <div className='profile-pic-container' onClick={openUserProfile}>
@@ -153,7 +167,7 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
                                     <FontAwesomeIcon className="font-awesome-icon" icon={faCheck} onClick={approveContent}/>
                                     <FontAwesomeIcon className="font-awesome-icon" icon={faFlag} onClick={flagContent}/>
                                     {
-                                        userRole === 'admin' && <FontAwesomeIcon className="font-awesome-icon" icon={faTrash} />
+                                        userRole === 'admin' && <FontAwesomeIcon className="font-awesome-icon" icon={faTrash} onClick={deleteContent}/>
                                     }
                                 </>
                             )
