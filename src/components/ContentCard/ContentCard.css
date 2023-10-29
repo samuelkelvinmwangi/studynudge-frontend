@@ -40,7 +40,7 @@
     justify-content: space-between;
 }
 
-.content-title, .username {
+.content-title, .username, .font-awesome-icon {
     cursor: pointer;
 }
 
