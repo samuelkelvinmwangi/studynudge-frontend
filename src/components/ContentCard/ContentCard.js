@@ -3,6 +3,7 @@ import './ContentCard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMessage, faShareNodes, faBookmark, faPlay, faPause, faPenToSquare, faCheck, faFlag, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
+import { apiUrl } from '../../apiUrl';
 
 function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at = '2 days ago', content = '', content_type, userRole, setIsModalOpen, setClickedContentId }) {
 
@@ -41,6 +42,28 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
     function openContentEditor() {
         setClickedContentId(id);
         setIsModalOpen(true);
+    }
+
+    function approveContent() {
+        const confirmation = window.confirm("Are you sure you want to proceed?");
+
+        if (confirmation) {
+            // User clicked "OK"
+            const formData = {
+                status: 'approved'
+            };
+        
+            fetch(`${apiUrl}/contents/change_status/${id}`, {
+                method: 'PATCH',
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            })
+        } else {
+            // User clicked "Cancel"
+            console.log("User cancelled");
+        }
     }
 
     return (
@@ -105,7 +128,7 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
                             ) : (
                                 <>
                                     <FontAwesomeIcon className="font-awesome-icon" icon={faPenToSquare} onClick={openContentEditor}/>
-                                    <FontAwesomeIcon className="font-awesome-icon" icon={faCheck} />
+                                    <FontAwesomeIcon className="font-awesome-icon" icon={faCheck} onClick={approveContent}/>
                                     <FontAwesomeIcon className="font-awesome-icon" icon={faFlag} />
                                     {
                                         userRole === 'admin' && <FontAwesomeIcon className="font-awesome-icon" icon={faTrash} />
