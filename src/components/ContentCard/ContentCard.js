@@ -13,6 +13,7 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
     const [isPlaying, setIsPlaying] = useState(false);
     const [showPauseButton, setShowPauseButton] = useState(false);
     const appUrl = process.env.PUBLIC_URL;
+    const [comments, setComments] = useState([]);
     const [showCommentSection, setShowCommentSection] = useState(false);
 
     const handleMouseEnter = () => {
@@ -189,7 +190,7 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
 
                     {
                         showCommentSection && (
-                            <CommentInput id={id} userId={userId}/>
+                            <CommentInput id={id} userId={userId} comments={comments} setComments={setComments}/>
                         )
                     }
                 </div>
