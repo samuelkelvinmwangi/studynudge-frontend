@@ -22,6 +22,8 @@ function CommentInput({ id, userId, comments, setComments }) {
         })
         .then(r => r.json())
         .then(data => setComments([...comments, data]));
+
+        setComment('');
     }
 
     return (
