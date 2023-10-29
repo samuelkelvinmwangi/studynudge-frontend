@@ -2,7 +2,7 @@ import './CommentInput.css';
 import { apiUrl } from '../../apiUrl';
 import { useState } from 'react';
 
-function CommentInput({ id, userId }) {
+function CommentInput({ id, userId, comments, setComments }) {
 
     const [comment, setComment] = useState('');
 
@@ -19,7 +19,9 @@ function CommentInput({ id, userId }) {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(commentData),
-        });
+        })
+        .then(r => r.json())
+        .then(data => setComments([...comments, data]));
     }
 
     return (
