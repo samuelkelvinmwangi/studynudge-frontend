@@ -5,7 +5,7 @@ import { faMessage, faShareNodes, faBookmark, faPlay, faPause, faPenToSquare, fa
 import { useNavigate } from "react-router-dom";
 import { apiUrl } from '../../apiUrl';
 
-function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at = '2 days ago', content = '', content_type, userRole, setIsModalOpen, setClickedContentId }) {
+function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at = '2 days ago', content = '', content_type, userRole, setIsModalOpen, setClickedContentId, setContent }) {
 
     const mediaRef = useRef(null);
     const navigate = useNavigate();
@@ -42,6 +42,12 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
     function openContentEditor() {
         setClickedContentId(id);
         setIsModalOpen(true);
+    }
+
+    function fetchContent() {
+        fetch(`${apiUrl}/contents`)
+            .then(r => r.json())
+            .then(data => setContent(data));
     }
 
     function approveContent() {
@@ -95,7 +101,8 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
         
             fetch(`${apiUrl}/contents/${id}`, {
                 method: 'DELETE'
-            })
+            });
+            fetchContent();
         } else {
             // User clicked "Cancel"
             console.log("User cancelled");
