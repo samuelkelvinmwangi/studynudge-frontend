@@ -5,6 +5,7 @@ import { faMessage, faShareNodes, faBookmark, faPlay, faPause, faPenToSquare, fa
 import { useNavigate } from "react-router-dom";
 import { apiUrl } from '../../apiUrl';
 import CommentInput from '../CommentInput/CommentInput';
+import CommentSection from '../CommentSection/CommentSection';
 
 function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at = '2 days ago', content = '', content_type, userId, userRole, setIsModalOpen, setClickedContentId, setContent }) {
 
@@ -194,7 +195,10 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
 
                     {
                         showCommentSection && (
-                            <CommentInput id={id} userId={userId} comments={comments} setComments={setComments}/>
+                            <>
+                                <CommentInput id={id} userId={userId} comments={comments} setComments={setComments}/>
+                                <CommentSection comments={comments}/>
+                            </>
                         )
                     }
                 </div>
