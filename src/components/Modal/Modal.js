@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './Modal.css';
+import { apiUrl } from '../../apiUrl';
 
-function Modal({ isModalOpen = false, setIsModalOpen }) {
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
-  const [contentType, setContentType] = useState('');
-  const [category, setCategory] = useState('');
-  const [mediaFile, setMediaFile] = useState('');
-  const [thumbnail, setThumbnail] = useState('');
+function Modal({ isModalOpen = false, setIsModalOpen, userId = '', clickedContent = {}, setClickedContent, setClickedContentId }) {
+  const [title, setTitle] = useState(clickedContent.title === undefined ? '' : clickedContent.title);
+  const [body, setBody] = useState(clickedContent.body === undefined ? '' : clickedContent.body);
+  const [contentType, setContentType] = useState(clickedContent.content_type === undefined ? '' : clickedContent.content_type);
+  const [categoryId, setCategoryId] = useState(clickedContent.category === undefined ? '' : clickedContent.category.id);
+  const [mediaFile, setMediaFile] = useState(clickedContent.content_media === undefined ? '' : clickedContent.content_media[0].link);
+  const [thumbnail, setThumbnail] = useState(clickedContent.content_media === undefined ? '' : clickedContent.content_media[1].link);
   const [categories, setCategories] = useState([]);
 
   const handleOpenModal = () => {
@@ -15,6 +16,8 @@ function Modal({ isModalOpen = false, setIsModalOpen }) {
   };
 
   const handleCloseModal = () => {
+    setClickedContent({});
+    setClickedContentId('');
     setIsModalOpen(false);
   };
 
@@ -31,7 +34,7 @@ function Modal({ isModalOpen = false, setIsModalOpen }) {
   };
 
   const handleCategoryChange = (event) => {
-    setCategory(event.target.value);
+    setCategoryId(event.target.value);
   };
 
   const handleMediaFileChange = (event) => {
@@ -50,13 +53,15 @@ function Modal({ isModalOpen = false, setIsModalOpen }) {
       title: title,
       body: body,
       content_type: contentType,
-      category_id: category,
+      category_id: categoryId,
       user_id: 1,
       content_urls: [mediaFile, thumbnail],
     };
 
-    fetch("https://snudgeapi.onrender.com/contents", {
-      method: "POST",
+    formData.id = clickedContent.id !== undefined && clickedContent.id;
+
+    fetch(`${apiUrl}/contents/${clickedContent.id === undefined ? '' : clickedContent.id}`, {
+      method: clickedContent.id === undefined ? 'POST' : 'PATCH',
       headers: {
         "Content-Type": "application/json",
       },
@@ -65,8 +70,9 @@ function Modal({ isModalOpen = false, setIsModalOpen }) {
     handleCloseModal();
   };
 
+  // Fetch categories
   useEffect(() => {
-    fetch("https://snudgeapi.onrender.com/categories")
+    fetch(`${apiUrl}/categories`)
       .then((r) => r.json())
       .then(data => setCategories(data));
   }, []);
@@ -123,7 +129,7 @@ function Modal({ isModalOpen = false, setIsModalOpen }) {
                 <select
                   id="category"
                   name="category"
-                  value={category}
+                  value={categoryId}
                   onChange={handleCategoryChange}
                   required
                 >
@@ -155,7 +161,7 @@ function Modal({ isModalOpen = false, setIsModalOpen }) {
                   required
                 />
 
-                <button type="submit">Create</button>
+                <button type="submit">{ clickedContent.id === undefined ? 'Create' : 'Update'}</button>
               </form>
             </div>
           </div>
