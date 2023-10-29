@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMessage, faShareNodes, faBookmark, faPlay, faPause, faPenToSquare, faCheck, faFlag, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
 import { apiUrl } from '../../apiUrl';
-import CommentInput from '../Content/CommentInput/CommentInput';
+import CommentInput from '../CommentInput/CommentInput';
 
-function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at = '2 days ago', content = '', content_type, userRole, setIsModalOpen, setClickedContentId, setContent }) {
+function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at = '2 days ago', content = '', content_type, userId, userRole, setIsModalOpen, setClickedContentId, setContent }) {
 
     const mediaRef = useRef(null);
     const navigate = useNavigate();
@@ -193,7 +193,7 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
 
                     {
                         showCommentInput && (
-                            <CommentInput />
+                            <CommentInput id={id} userId={userId}/>
                         )
                     }
                 </div>

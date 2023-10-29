@@ -3,7 +3,7 @@ import './Content.css';
 import ContentCard from '../ContentCard/ContentCard';
 //import { content } from '../../sampledata';
 
-function Content({ userRole, setIsModalOpen, content, setContent, setClickedContentId }) {
+function Content({ userId, userRole, setIsModalOpen, content, setContent, setClickedContentId }) {
     const [activeTab, setActiveTab] = useState('video');
 
     const handleTabClick = (tab) => {
@@ -42,6 +42,7 @@ function Content({ userRole, setIsModalOpen, content, setContent, setClickedCont
                                     created_at={item.created_at}
                                     content={item.body}
                                     content_type={activeTab}
+                                    userId={userId}
                                     userRole={userRole}
                                     setIsModalOpen={setIsModalOpen}
                                     setClickedContentId={setClickedContentId}
@@ -62,6 +63,7 @@ function Content({ userRole, setIsModalOpen, content, setContent, setClickedCont
                                     created_at={item.created_at}
                                     content={item.body}
                                     content_type={activeTab}
+                                    userId={userId}
                                     userRole={userRole}
                                     setIsModalOpen={setIsModalOpen}
                                     setClickedContentId={setClickedContentId}
@@ -82,6 +84,7 @@ function Content({ userRole, setIsModalOpen, content, setContent, setClickedCont
                                     created_at={item.created_at}
                                     content={item.body}
                                     content_type={activeTab}
+                                    userId={userId}
                                     userRole={userRole}
                                     setIsModalOpen={setIsModalOpen}
                                     setClickedContentId={setClickedContentId}

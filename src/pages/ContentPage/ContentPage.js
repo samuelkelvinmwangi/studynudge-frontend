@@ -5,7 +5,7 @@ import './ContentPage.css';
 import { useState, useEffect } from 'react';
 import { apiUrl } from '../../apiUrl';
 
-function ContentPage( { userId = 1, userRole = 'admin' } ) {
+function ContentPage( { userId = 4, userRole = 'student' } ) {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [clickedContentId, setClickedContentId] = useState('');
@@ -37,7 +37,7 @@ function ContentPage( { userId = 1, userRole = 'admin' } ) {
                     isModalOpen ? <Modal clickedContent={clickedContentId === '' ? clickedContent : getClickedContent(clickedContentId)} setClickedContent={setClickedContent} setClickedContentId={setClickedContentId} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} userId={userId} />
                     : null
                 }
-                <Content content={content} setContent={setContent} userRole={userRole} setIsModalOpen={setIsModalOpen} setClickedContentId={setClickedContentId} />
+                <Content content={content} setContent={setContent} userId={userId} userRole={userRole} setIsModalOpen={setIsModalOpen} setClickedContentId={setClickedContentId} />
             </div>
         </div>
     )
