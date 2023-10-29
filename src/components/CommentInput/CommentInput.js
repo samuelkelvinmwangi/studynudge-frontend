@@ -1,14 +1,15 @@
 import './CommentInput.css';
 import { apiUrl } from '../../apiUrl';
+import { useState } from 'react';
 
-function CommentInput() {
+function CommentInput({ id, userId }) {
 
     const [comment, setComment] = useState('');
 
     function postComment() {
 
         const commentData = {
-            user_id: 4,
+            user_id: userId,
             comment: comment
         };
 
