@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMessage, faShareNodes, faBookmark, faPlay, faPause, faPenToSquare, faCheck, faFlag, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
 
-function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at = '2 days ago', content = '', content_type, userRole }) {
+function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at = '2 days ago', content = '', content_type, userRole, setIsModalOpen, setClickedContentId }) {
 
     const mediaRef = useRef(null);
     const navigate = useNavigate();
@@ -36,6 +36,11 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
 
     function openUserProfile() {
         
+    }
+
+    function openContentEditor() {
+        setClickedContentId(id);
+        setIsModalOpen(true);
     }
 
     return (
@@ -92,18 +97,18 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
                             userRole === 'student' ?
                             (
                                 <>
-                                    <FontAwesomeIcon icon={faMessage} />
-                                    <FontAwesomeIcon icon={faShareNodes} />
-                                    <FontAwesomeIcon icon={faBookmark} />
-                                    {/* TODO display this icon if the user create this post <FontAwesomeIcon icon={faTrash} /> */}
+                                    <FontAwesomeIcon className="font-awesome-icon" icon={faMessage} />
+                                    <FontAwesomeIcon className="font-awesome-icon" icon={faShareNodes} />
+                                    <FontAwesomeIcon className="font-awesome-icon" icon={faBookmark} />
+                                    {/* TODO display this icon if the user create this post <FontAwesomeIcon className="font-awesome-icon" icon={faTrash} /> */}
                                 </>
                             ) : (
                                 <>
-                                    <FontAwesomeIcon icon={faPenToSquare} />
-                                    <FontAwesomeIcon icon={faCheck} />
-                                    <FontAwesomeIcon icon={faFlag} />
+                                    <FontAwesomeIcon className="font-awesome-icon" icon={faPenToSquare} onClick={openContentEditor}/>
+                                    <FontAwesomeIcon className="font-awesome-icon" icon={faCheck} />
+                                    <FontAwesomeIcon className="font-awesome-icon" icon={faFlag} />
                                     {
-                                        userRole === 'admin' && <FontAwesomeIcon icon={faTrash} />
+                                        userRole === 'admin' && <FontAwesomeIcon className="font-awesome-icon" icon={faTrash} />
                                     }
                                 </>
                             )
