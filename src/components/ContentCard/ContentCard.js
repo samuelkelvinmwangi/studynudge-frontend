@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import './ContentCard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMessage, faShareNodes, faBookmark, faPlay, faPause, faPenToSquare, faCheck, faFlag, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faMessage, faShareNodes, faBookmark as bookmarked, faPlay, faPause, faPenToSquare, faCheck, faFlag, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faBookmark } from '@fortawesome/free-regular-svg-icons';
 import { useNavigate } from "react-router-dom";
 import { apiUrl } from '../../apiUrl';
 import CommentInput from '../CommentInput/CommentInput';
@@ -16,6 +17,8 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
     const appUrl = process.env.PUBLIC_URL;
     const [comments, setComments] = useState([]);
     const [showCommentSection, setShowCommentSection] = useState(false);
+    const [isBookmarked, setIsBookmarked] = useState(false);
+    const [wishlishId, setWishlishId] = useState('');
 
     const handleMouseEnter = () => {
         setShowPauseButton(true);
@@ -121,6 +124,26 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
         setShowCommentSection(!showCommentSection);
     }
 
+    function handleBookmarkingContent() {
+        const contentData = {
+            user_id: userId,
+            content_id: id,
+        };
+
+        fetch(`${apiUrl}/wishlists${isBookmarked ? `/${wishlishId}` : ''}`, {
+            method: isBookmarked ? 'DELETE' : 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(contentData),
+        })
+        .then(r => r.status !== 204 ? r.json() : '204')
+        .then(data => {
+            setWishlishId(data === '204' ? '' : data.id);
+            setIsBookmarked(!isBookmarked);
+        });
+    }
+
     return (
         <div className='card-container'>
             <div className='profile-pic-container' onClick={openUserProfile}>
@@ -177,7 +200,7 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
                                 <>
                                     <FontAwesomeIcon className="font-awesome-icon" icon={faMessage} onClick={handleShowingCommentSection}/>
                                     <FontAwesomeIcon className="font-awesome-icon" icon={faShareNodes} />
-                                    <FontAwesomeIcon className="font-awesome-icon" icon={faBookmark} />
+                                    <FontAwesomeIcon className="font-awesome-icon" icon={isBookmarked ? bookmarked : faBookmark} onClick={handleBookmarkingContent}/>
                                     {/* TODO display this icon if the user create this post <FontAwesomeIcon className="font-awesome-icon" icon={faTrash} /> */}
                                 </>
                             ) : (
