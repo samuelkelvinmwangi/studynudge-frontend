@@ -1,12 +1,15 @@
 import React from 'react';
 import './LoginForm.css';
 import { useState} from 'react';
+// import { useNavigate } from 'react-router-dom';
 
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+  const [user, setUser] = useState(null); 
+  // const navigate = useNavigate();
 
   const handleLogin = async () => {
     
@@ -25,6 +28,8 @@ const LoginForm = () => {
             // if (data.error) {
             //     setErrorMessage(data.error);
             // }
+            setUser(data); 
+            // navigate('/profile', {  state:{email} }); 
             console.log('My response: ', data);
             window.location.href = '/admin';
         })
