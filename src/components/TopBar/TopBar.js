@@ -24,7 +24,7 @@ function TopBar({ setIsModalOpen }) {
             <h2 className="page-title">Content</h2>
             <div className="topbar-icon-container">
                 <div className="topbar-icons">
-                    {
+                    {/* {
                         isSearchVisible ? (
                             <input type="text" className="search-input" placeholder='Search'></input>
                         ) : (
@@ -32,7 +32,7 @@ function TopBar({ setIsModalOpen }) {
                                 <FontAwesomeIcon icon={faMagnifyingGlass} onClick={showSearchInput}/>
                             </i>
                         )
-                    }
+                    } */}
                     <i id="add-button">
                         <FontAwesomeIcon icon={faPlus} onClick={openModal}/>
                     </i>
