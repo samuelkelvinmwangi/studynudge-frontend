@@ -144,6 +144,18 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
         });
     }
 
+    function copyToClipboard(contentId) {
+        navigator.clipboard.writeText(process.env.NODE_ENV === 'production'
+            ? `https://studynudge-frontend.vercel.app/content/${contentId}`
+            : `http://localhost:3001/content/${contentId}`)
+        .then(() => {
+            console.log("Text copied to clipboard");
+        })
+        .catch((error) => {
+            console.error("Error copying text to clipboard:", error);
+        });
+    }
+
     return (
         <div className='card-container'>
             <div className='profile-pic-container' onClick={openUserProfile}>
@@ -199,7 +211,7 @@ function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at =
                             (
                                 <>
                                     <FontAwesomeIcon className="font-awesome-icon" icon={faMessage} onClick={handleShowingCommentSection}/>
-                                    <FontAwesomeIcon className="font-awesome-icon" icon={faShareNodes} />
+                                    <FontAwesomeIcon className="font-awesome-icon" icon={faShareNodes} onClick={copyToClipboard(id)}/>
                                     <FontAwesomeIcon className="font-awesome-icon" icon={isBookmarked ? bookmarked : faBookmark} onClick={handleBookmarkingContent}/>
                                     {/* TODO display this icon if the user create this post <FontAwesomeIcon className="font-awesome-icon" icon={faTrash} /> */}
                                 </>
