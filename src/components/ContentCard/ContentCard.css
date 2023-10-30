@@ -40,7 +40,7 @@
     justify-content: space-between;
 }
 
-.content-title, .username {
+.content-title, .username, .font-awesome-icon {
     cursor: pointer;
 }
 
@@ -62,7 +62,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 100px;
+    width: 200px;
     margin: 12px;
 }
 
@@ -75,6 +75,8 @@
     position: absolute;
     top: 120px; left: 233px;
     color: white;
+    background-color: rgba(0, 0, 0, 0.7);;
+    padding: 9px;
 }
 
 /* Styles for screens smaller than 650px */

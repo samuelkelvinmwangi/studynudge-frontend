@@ -1,16 +1,24 @@
 import { useState, useRef, useEffect } from 'react';
 import './ContentCard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMessage, faShareNodes, faBookmark, faPlay, faPause } from '@fortawesome/free-solid-svg-icons'
+import { faMessage, faShareNodes, faBookmark as bookmarked, faPlay, faPause, faPenToSquare, faCheck, faFlag, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faBookmark } from '@fortawesome/free-regular-svg-icons';
 import { useNavigate } from "react-router-dom";
+import { apiUrl } from '../../apiUrl';
+import CommentInput from '../CommentInput/CommentInput';
+import CommentSection from '../CommentSection/CommentSection';
 
-function ContentCard({ id, title, url, username, created_at = '2 days ago', content = '', content_type }) {
+function ContentCard({ id, title, mediaUrl, thumbnailUrl, username, created_at = '2 days ago', content = '', content_type, userId, userRole, setIsModalOpen, setClickedContentId, setContent }) {
 
     const mediaRef = useRef(null);
     const navigate = useNavigate();
     const [isPlaying, setIsPlaying] = useState(false);
     const [showPauseButton, setShowPauseButton] = useState(false);
     const appUrl = process.env.PUBLIC_URL;
+    const [comments, setComments] = useState([]);
+    const [showCommentSection, setShowCommentSection] = useState(false);
+    const [isBookmarked, setIsBookmarked] = useState(false);
+    const [wishlishId, setWishlishId] = useState('');
 
     const handleMouseEnter = () => {
         setShowPauseButton(true);
@@ -31,11 +39,121 @@ function ContentCard({ id, title, url, username, created_at = '2 days ago', cont
     }
 
     function openContentView() {
-        navigate(`/content/${id}`, { state: { id, title, url, username, created_at, content, content_type } });
+        navigate(`/content/${id}`, { state: { id, title, mediaUrl, thumbnailUrl, username, created_at, content, content_type, userRole } });
     }
 
     function openUserProfile() {
         
+    }
+
+    function openContentEditor() {
+        setClickedContentId(id);
+        setIsModalOpen(true);
+    }
+
+    function fetchContent() {
+        fetch(`${apiUrl}/contents`)
+            .then(r => r.json())
+            .then(data => setContent(data));
+    }
+
+    function approveContent() {
+        const confirmation = window.confirm("Are you sure you want to proceed?");
+
+        if (confirmation) {
+            // User clicked "OK"
+            const formData = {
+                status: 'approved'
+            };
+        
+            fetch(`${apiUrl}/contents/change_status/${id}`, {
+                method: 'PATCH',
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            })
+        } else {
+            // User clicked "Cancel"
+            console.log("User cancelled");
+        }
+    }
+
+    function flagContent() {
+        const confirmation = window.confirm("Are you sure you want to proceed?");
+
+        if (confirmation) {
+            // User clicked "OK"
+            const formData = {
+                status: 'flagged'
+            };
+        
+            fetch(`${apiUrl}/contents/change_status/${id}`, {
+                method: 'PATCH',
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            })
+        } else {
+            // User clicked "Cancel"
+            console.log("User cancelled");
+        }
+    }
+
+    function deleteContent() {
+        const confirmation = window.confirm("Are you sure you want to proceed?");
+
+        if (confirmation) {
+        
+            fetch(`${apiUrl}/contents/${id}`, {
+                method: 'DELETE'
+            });
+            fetchContent();
+        } else {
+            // User clicked "Cancel"
+            console.log("User cancelled");
+        }
+    }
+
+    function handleShowingCommentSection() {
+        fetch(`${apiUrl}/contents_comments/${id}`)
+            .then(r => r.json())
+            .then(data => setComments(data))
+        ;
+        setShowCommentSection(!showCommentSection);
+    }
+
+    function handleBookmarkingContent() {
+        const contentData = {
+            user_id: userId,
+            content_id: id,
+        };
+
+        fetch(`${apiUrl}/wishlists${isBookmarked ? `/${wishlishId}` : ''}`, {
+            method: isBookmarked ? 'DELETE' : 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(contentData),
+        })
+        .then(r => r.status !== 204 ? r.json() : '204')
+        .then(data => {
+            setWishlishId(data === '204' ? '' : data.id);
+            setIsBookmarked(!isBookmarked);
+        });
+    }
+
+    function copyToClipboard(contentId) {
+        navigator.clipboard.writeText(process.env.NODE_ENV === 'production'
+            ? `https://studynudge-frontend.vercel.app/content/${contentId}`
+            : `http://localhost:3001/content/${contentId}`)
+        .then(() => {
+            console.log("Text copied to clipboard");
+        })
+        .catch((error) => {
+            console.error("Error copying text to clipboard:", error);
+        });
     }
 
     return (
@@ -53,9 +171,9 @@ function ContentCard({ id, title, url, username, created_at = '2 days ago', cont
                         className='content-title'
                         onClick={openContentView}>{ title }</h5>
                     {
-                        content !== '' ? (
+                        content_type === 'article' ? (
                             <div className='image-container' onClick={openContentView}>
-                                <img className='content-image' src={ url } alt="Content" />
+                                <img className='content-image' src={ thumbnailUrl } alt="Content" />
                             </div>
                         )
                         : (
@@ -67,20 +185,20 @@ function ContentCard({ id, title, url, username, created_at = '2 days ago', cont
                                     isPlaying ? 
                                         showPauseButton ? (
                                             <i id="pause-button">
-                                                <FontAwesomeIcon icon={faPause} onClick={handleVideo}/>
+                                                <FontAwesomeIcon className='pause-icon' icon={faPause} onClick={handleVideo}/>
                                             </i>
                                         ) : null
                                     : (
                                         <i id="play-button">
-                                            <FontAwesomeIcon icon={faPlay} onClick={handleVideo}/>
+                                            <FontAwesomeIcon className='play-icon' icon={faPlay} onClick={handleVideo}/>
                                         </i>
                                     )
                                 }
                                 <video
                                     ref={mediaRef}
                                     className='content-media'
-                                    src={ content_type === 'audio' ? appUrl + url : url }
-                                    poster={ content_type === 'audio' ? 'https://img.freepik.com/free-vector/hand-drawn-flat-podcast-cover-template_23-2149433228.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1697846400&semt=ais' : ''}>
+                                    src={ mediaUrl }
+                                    poster={ thumbnailUrl }>
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
@@ -88,14 +206,35 @@ function ContentCard({ id, title, url, username, created_at = '2 days ago', cont
                     }
                     
                     <div className='content-icons'>
-                        <FontAwesomeIcon icon={faMessage} />
-                        <FontAwesomeIcon icon={faShareNodes} />
-                        <FontAwesomeIcon icon={faBookmark} />
+                        {
+                            userRole === 'student' ?
+                            (
+                                <>
+                                    <FontAwesomeIcon className="font-awesome-icon" icon={faMessage} onClick={handleShowingCommentSection}/>
+                                    <FontAwesomeIcon className="font-awesome-icon" icon={faShareNodes} onClick={copyToClipboard(id)}/>
+                                    <FontAwesomeIcon className="font-awesome-icon" icon={isBookmarked ? bookmarked : faBookmark} onClick={handleBookmarkingContent}/>
+                                    {/* TODO display this icon if the user create this post <FontAwesomeIcon className="font-awesome-icon" icon={faTrash} /> */}
+                                </>
+                            ) : (
+                                <>
+                                    <FontAwesomeIcon className="font-awesome-icon" icon={faPenToSquare} onClick={openContentEditor}/>
+                                    <FontAwesomeIcon className="font-awesome-icon" icon={faCheck} onClick={approveContent}/>
+                                    <FontAwesomeIcon className="font-awesome-icon" icon={faFlag} onClick={flagContent}/>
+                                    {
+                                        userRole === 'admin' && <FontAwesomeIcon className="font-awesome-icon" icon={faTrash} onClick={deleteContent}/>
+                                    }
+                                </>
+                            )
+                        }
                     </div>
+
                     {
-                        content !== '' ? (
-                            <p>{ content }</p>
-                        ) : null
+                        showCommentSection && (
+                            <>
+                                <CommentInput id={id} userId={userId} comments={comments} setComments={setComments}/>
+                                <CommentSection comments={comments}/>
+                            </>
+                        )
                     }
                 </div>
             </div>
