@@ -4,6 +4,7 @@ label {
     font-weight: bold;
     display: flex;
     margin-bottom: 5px;
+   
 }
 
 input[type='text'],
@@ -19,4 +20,19 @@ input[type='password']{
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-bottom: 20px;
+}
+
+form{
+  margin-left: -150px;
+ 
+}
+button{
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    border-color: transparent;
+    color: #3B82F6;
+}
+profile{
+    background-color: #C4CDD5;
 }

@@ -23,6 +23,10 @@ const Sidebar = () => {
     navigate("/content");
   }
 
+  const handleProfile = () => {
+    navigate("/profile");
+  };
+
  return (
  
     <div className="sidebar">
@@ -32,7 +36,7 @@ const Sidebar = () => {
       <button onClick={handleDashboard}>Dashboard</button>
         <button onClick={handleCategory}>Categories</button>
         <button onClick={openContentPage}>Content</button>
-        {/* <button>Profile</button> */}
+        <button onClick={handleProfile}>Profile</button>
         <div className='sidebar-bottom'>
         <button onclick={handleLogout}>Logout</button>
         </div>

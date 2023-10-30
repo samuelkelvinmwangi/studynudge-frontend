@@ -5,8 +5,8 @@ import Contact from "./routes/Contact";
 import Login from "./routes/Login";
 import Posts from "./routes/Posts";
 import { Route, Routes } from "react-router-dom";
-import ContentPage from "./pages/ContentPage/ContentPage";
-import ContentView from "./components/ContentView/ContentView";
+// import ContentPage from "./pages/ContentPage/ContentPage";
+// import ContentView from "./components/ContentView/ContentView";
 import Admin from "./routes/Admin";
 import AdminCategory from "./routes/AdminCategory";
 import Staff from "./routes/Staff";
@@ -14,6 +14,7 @@ import StaffCategory from "./routes/StaffCategory";
 import AdminUsers from "./routes/AdminUsers";
 import AdminDashboard from "./components/AdminDashboard";
 // import AdminContent from "./routes/AdminContent";
+import Profile from "./routes/Profile"
 
 function App() {
 
@@ -38,8 +39,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<h1>Home</h1>} />
-        <Route path="/content" element={<ContentPage />} />
-        <Route path="/content/:id" element={ <ContentView /> } />
+        {/* <Route path="/content" element={<ContentPage />} />
+        <Route path="/content/:id" element={ <ContentView /> } /> */}
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/category" element={<AdminCategory />} />
         <Route path="/staff" element={<Staff />} />
@@ -47,6 +48,7 @@ function App() {
         <Route path="/admin/users" element={<AdminUsers />} />
         <Route path="/dashboard" element={<AdminDashboard />} />
         {/* <Route path="/admin/content" element={<AdminContent />} /> */}
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </>
   );

@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import './AdminDashboard.css';
 // import Sidebar from './SideBar';
+import { useLocation } from 'react-router-dom';
 
 
 const AdminDashboard = () => {
-
+  const location = useLocation();
   const [users, setUsers] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [user, setUser] = useState(location.state.user);
 
   useEffect(() => {
     fetch("https://snudgeapi.onrender.com/users")

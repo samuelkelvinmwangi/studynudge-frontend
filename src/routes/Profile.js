@@ -1,14 +1,16 @@
 import React from 'react';
-import ProfileForm from '../components/ProfileForm';
+import './Admin.css';
+import Profile from '../components/Profile';
+import NavBar from '../components/NavigationBar';
 
 
-const Profile = () => {
+const ProfileRoute = () => {
   return (
-    <div>
-    <ProfileForm />
-      
+    <div className='components'>
+    <NavBar />
+    <Profile />
     </div>
   );
 }
 
-export default Profile;
+export default ProfileRoute;

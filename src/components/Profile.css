@@ -1,0 +1,22 @@
+button {
+    background-color: rgb(65, 20, 169);
+    margin-bottom: 100px;
+}
+
+.profile {
+    margin-left: 50%;
+   display: flex;
+   flex-direction: column;
+   
+}
+
+h1{
+    margin-left: -400px;
+    /* color: black; */
+}
+
+p{
+    margin-bottom: 15px;
+    background-color: white;
+    border: transparent;
+}
