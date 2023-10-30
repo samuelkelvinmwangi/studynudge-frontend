@@ -42,10 +42,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* gap: 70px; */
-    
-    
-
+    gap: 70px;
   }
   
   .stats .users, .stats .posts {
@@ -53,9 +50,13 @@
     color: white;
     padding: 20px;
     border-radius: 10px;
-    width: 200px;
+    /* width: 200px; */
     height: 100px;
-   
+  }
+  #p1{
+    color:#F4F6F8;
+    size:1.8rem ;
+    padding:0.5rem;
   }
 
   

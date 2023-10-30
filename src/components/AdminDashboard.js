@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './AdminDashboard.css';
-import Sidebar from './SideBar';
+// import Sidebar from './SideBar';
 
 
 const AdminDashboard = () => {
@@ -19,6 +19,7 @@ const AdminDashboard = () => {
     fetch("https://snudgeapi.onrender.com/users")
       .then((r) => r.json())
       .then(data => setCategories(data));
+      console.log(categories)
   }, []);
 
  return (
@@ -30,15 +31,15 @@ const AdminDashboard = () => {
         <div className='users'>
           <h2>Users</h2>
           <div className='sidelining'>
-          <p>{users.length}<br></br>New Users</p>
-          <p>{users.length}<br></br>Total Users</p>
+          <p id="p1">{users.length}<br></br>New Users</p>
+          <p id="p1">{users.length}<br></br>Total Users</p>
           </div>
         </div>
         <div className='posts'>
           <h2>Posts</h2>
           <div className='side-by-side'>
-          <p>10<br></br>New Posts</p>
-          <p>89<br></br>Total Posts</p>
+          <p id="p1">10<br></br>New Posts</p>
+          <p id="p1">89<br></br>Total Posts</p>
           </div>
         </div>
       </div>
@@ -90,8 +91,7 @@ const AdminDashboard = () => {
  </tr>
  {categories.map((category) => (
         <tr>
-          <td>category.category_name</td>
-          <td>05/10/2023</td>
+        <td>{category.category_name}</td>
         </tr>
  ))}
 </table>
@@ -102,4 +102,4 @@ const AdminDashboard = () => {
  );
 }
 
-export default AdminDashboard;
+export default AdminDashboard;
