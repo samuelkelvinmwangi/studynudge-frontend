@@ -14,7 +14,7 @@ import StaffCategory from "./routes/StaffCategory";
 import AdminUsers from "./routes/AdminUsers";
 import AdminDashboard from "./components/AdminDashboard";
 // import AdminContent from "./routes/AdminContent";
-import Profile from "./routes/Profile"
+// import Profile from "./routes/Profile"
 
 function App() {
 
@@ -48,7 +48,7 @@ function App() {
         <Route path="/admin/users" element={<AdminUsers />} />
         <Route path="/dashboard" element={<AdminDashboard />} />
         {/* <Route path="/admin/content" element={<AdminContent />} /> */}
-        <Route path="/profile" element={<Profile />} />
+        {/* <Route path="/profile" element={<Profile />} /> */}
       </Routes>
     </>
   );
