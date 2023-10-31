@@ -9,7 +9,7 @@ const AdminDashboard = () => {
   const location = useLocation();
   const [users, setUsers] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [user, setUser] = useState(location.state.user);
+  const [user, setUser] = useState(location.state?.user);
 
   useEffect(() => {
     fetch(`${apiUrl}/users`)
