@@ -2,6 +2,7 @@ import React from 'react';
 import './LoginForm.css';
 import { useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+import { apiUrl } from '../apiUrl';
 
 
 const LoginForm = () => {
@@ -13,7 +14,7 @@ const LoginForm = () => {
 
   const handleLogin = async () => {
     
-    await fetch('https://snudgeapi.onrender.com/login', {
+    await fetch(`${apiUrl}/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

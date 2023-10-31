@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './StaffDashboard.css';
+import { apiUrl } from '../apiUrl';
 
 
 const StaffDashboard = () => {
@@ -8,13 +9,13 @@ const StaffDashboard = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("https://snudgeapi.onrender.com/users")
+    fetch(`${apiUrl}/users`)
       .then((r) => r.json())
       .then(setUsers);
   }, []);
 
   useEffect(() => {
-    fetch("https://snudgeapi.onrender.com/categories")
+    fetch(`${apiUrl}/categories`)
       .then((r) => r.json())
       .then(setCategories);
   }, []);

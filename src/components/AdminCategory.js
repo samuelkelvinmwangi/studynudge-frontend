@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './AdminCategory.css';
+import { apiUrl } from '../apiUrl';
 
 const AdminCategory = () => {
 
@@ -9,7 +10,7 @@ const AdminCategory = () => {
   const [description, setDescription] = useState("");
 
   useEffect(() => {
-    fetch("https://snudgeapi.onrender.com/categories")
+    fetch(`${apiUrl}/categories`)
       .then((r) => r.json())
       .then(data => setCategories(data));
   }, []);
@@ -20,7 +21,7 @@ const AdminCategory = () => {
       category_name: categoryName,
       description: description
     };
-    fetch("https://snudgeapi.onrender.com/categories", {
+    fetch(`${apiUrl}/categories`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

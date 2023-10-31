@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './AdminDashboard.css';
 // import Sidebar from './SideBar';
 import { useLocation } from 'react-router-dom';
+import { apiUrl } from '../apiUrl';
 
 
 const AdminDashboard = () => {
@@ -11,14 +12,14 @@ const AdminDashboard = () => {
   const [user, setUser] = useState(location.state.user);
 
   useEffect(() => {
-    fetch("https://snudgeapi.onrender.com/users")
+    fetch(`${apiUrl}/users`)
       .then((r) => r.json())
       .then(data => setUsers(data));
       console.log(users)
   }, []);
 
   useEffect(() => {
-    fetch("https://snudgeapi.onrender.com/users")
+    fetch(`${apiUrl}/users`)
       .then((r) => r.json())
       .then(data => setCategories(data));
       console.log(categories)

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './AdminUsers.css';
+import { apiUrl } from '../apiUrl';
 
 const AdminUsers = () => {
 
@@ -12,7 +13,7 @@ const AdminUsers = () => {
   const [role, setRole] = useState("");
 
   useEffect(() => {
-    fetch("https://snudgeapi.onrender.com/users")
+    fetch(`${apiUrl}/users`)
       .then((r) => r.json())
       .then(data => setUsers(data));
   }, []);
@@ -39,7 +40,7 @@ function handleSubmit(e) {
     role: role,
     password: '123456'
   };
-  fetch("https://snudgeapi.onrender.com/users", {
+  fetch(`${apiUrl}/users`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

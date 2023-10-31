@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./ProfileFormStyles.css";
 import { useParams, useNavigate } from "react-router";
+import { apiUrl } from '../apiUrl';
 
 const ProfileForm = ({ user }) => {
 
@@ -11,7 +12,7 @@ const ProfileForm = ({ user }) => {
 
   function handleEdit(e) {
     e.preventDefault();
-    fetch(`https://snudgeapi.onrender.com/users/${user.id}`, {
+    fetch(`${apiUrl}/users/${user.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
