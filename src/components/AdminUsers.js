@@ -51,7 +51,7 @@ function handleSubmit(e) {
 
 return (
   <div>
-    <div  className="">
+    <div  className="users-container">
     <div className="searchbox">
           <input
             type="text"
@@ -81,14 +81,6 @@ return (
     
     {display === 'Admin' && (
         <table className='Admin'>
-        <thead>
-          <tr>
-          <th>Name</th>
-          <th>Email Address</th>
-          <th>Last Edited On</th>
-          <th>Created On</th>
-          </tr>
-        </thead>
         <tbody>
         {users.map((user) => (
           <tr>
@@ -104,14 +96,6 @@ return (
 
     {display === 'Student' && (
         <table className='Students'>
-        <thead>
-          <tr>
-          <th>Name</th>
-          <th>Email Address</th>
-          <th>Last Edited On</th>
-          <th>Created On</th>
-          </tr>
-        </thead>
         <tbody>
         {users.map((user) => (
           <tr>
@@ -126,14 +110,6 @@ return (
     )}
     {display === 'Staff' && (
         <table className='Staff'>
-        <thead>
-          <tr>
-          <th>Name</th>
-          <th>Email Address</th>
-          <th>Last Edited On</th>
-          <th>Created On</th>
-          </tr>
-        </thead>
         <tbody>
         {users.map((user) => (
           <tr>
@@ -148,7 +124,7 @@ return (
     )}
   </div>
   {showForm && (
-      <form onSubmit={handleSubmit}>
+      <form className='user-form' onSubmit={handleSubmit}>
         <h1 id="h1">Create User</h1>
           <input type="text" className="userName" placeholder='Name of User' value={userName} onChange={(e) => setUserName(e.target.value)} />
           <input type="text" className="email" placeholder='Email Address' value={userEmail} onChange={(e) => setUserEmail(e.target.value)}/>

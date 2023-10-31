@@ -90,8 +90,8 @@ function Modal({ isModalOpen = false, setIsModalOpen, userId = '', clickedConten
                 &times;
               </span>
             </div>
-            <div className='content-form'>
-              <form onSubmit={handleSubmit}>
+            <div className='content-form-container'>
+              <form className="content-form" onSubmit={handleSubmit}>
                 <input
                   type="text"
                   id="title"

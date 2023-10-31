@@ -29,28 +29,28 @@ const ProfileForm = ({ user }) => {
 
   return (
     <div className='profile'>
-    <div className='form'>
-    <form onSubmit={handleEdit}>
-        <label htmlFor='firstName'>First Name</label>
-        <input type='text' id='name' name='firstName' />
+      <div className='profile-form-container'>
+        <form onSubmit={handleEdit}>
+            <label htmlFor='firstName'>First Name</label>
+            <input className='profile-text-inputs' type='text' id='name' name='firstName' />
 
-        <label htmlFor='lastName'>Last Name</label>
-        <input type='text' id='name' name='lastName' />
+            <label htmlFor='lastName'>Last Name</label>
+            <input className='profile-text-inputs' type='text' id='name' name='lastName' />
 
-        <label htmlFor='email'>Email</label>
-        <input type='email' id='email' name='email' />
+            <label htmlFor='email'>Email</label>
+            <input className='profile-text-inputs' type='email' id='email' name='email' />
 
-        <label htmlFor='password'>Password</label>
-        <input type='text' id='password' name='password' />
+            <label htmlFor='password'>Password</label>
+            <input className='profile-text-inputs' type='text' id='password' name='password' />
 
-        <label htmlFor='newPassword'>New Password</label>
-        <input type='password' id='password' name='newPassword' />
+            <label htmlFor='newPassword'>New Password</label>
+            <input className='profile-text-inputs' type='password' id='password' name='newPassword' />
 
-        <button>Change</button>
+            <button>Change</button>
 
-    </form>
-      
-    </div>
+        </form>
+        
+      </div>
     </div>
   );
 }

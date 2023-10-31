@@ -49,7 +49,7 @@ return (
     <h1 id='h1'>Categories</h1>
     <button className='newcategory' onClick={toggleForm}>Create Category</button>
     
-    <table>
+    <table className='category-table'>
   <thead>
     <tr>
     <th>Name</th>
@@ -70,7 +70,7 @@ return (
 </table>
   </div>
   {showForm && (
-      <form onSubmit={handleSubmit}>
+      <form className='category-form' onSubmit={handleSubmit}>
         <h1 id='h1'>Add Category</h1>
           <input type="text" className="categoryName" placeholder='Name of Category' value={categoryName} onChange={(e) => setCategoryName(e.target.value)} />
           <input type="text" className="description" placeholder='Description' value={description} onChange={(e) => setDescription(e.target.value)} />

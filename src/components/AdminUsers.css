@@ -1,97 +1,96 @@
+.users-container {
+  margin-left: 300px;
+}
+
 .form-control {
-    width: 20cm;
-    height: 2cm;
-    border: 4px;
+  width: 20cm;
+  height: 2cm;
+  border: 4px;
 }
 
 #h1 {
-    margin-top: 20px;
-    margin-left: 2cm;
-    text-align: center;
+  margin-top: 20px;
+  margin-left: 2cm;
+  text-align: center;
 }
 .newuser {
-    background-color: rgb(11, 96, 216);
-    padding: 5px;
+  background-color: rgb(11, 96, 216);
+  padding: 5px;
 }
 
-table {
-    width: 100%;
-    margin-top: 2cm;
-    display: flex;
-    flex-direction: column;
-    
+.users-container table {
+  width: 100%;
+  margin-top: 2cm;
+  display: flex;
+  flex-direction: column;
 }
-
    
-   #h1 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    background-color:white;
-    color: black;
-    margin-left: 220px;
-   }
+#h1 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  background-color:white;
+  color: black;
+  margin-left: 220px;
+}
 
-   button.newuser {
-    margin-left: auto;
-    margin-right: 0;
-    margin-left: 90%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border-color: transparent;
-   }
+button.newuser {
+  margin-left: auto;
+  margin-right: 0;
+  margin-left: 90%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-color: transparent;
+}
 
-   th, td {
-    padding: 8px;
-    text-align: left; /* Align text to the left */
-  }
+.users-container th, td {
+  padding: 8px;
+  text-align: left; /* Align text to the left */
+}
 
-  .userName {
-    display: block;
-    margin-top: 10px;
-  }
+.userName {
+  display: block;
+  margin-top: 10px;
+}
 
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 400px;
-   }
+.user-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 400px;
+}
 
-   .dltBtn {
-    color: red;
-    padding: 7px;
-    width: 5cm;
-    margin-bottom: 1cm;
-   }
+.dltBtn {
+  color: red;
+  padding: 7px;
+  width: 5cm;
+  margin-bottom: 1cm;
+}
 
-   .newUser {
-    width: 5cm;
-    height: 1cm;
-    background-color:rgb(14, 138, 215);
-   }
+.newUser {
+  width: 5cm;
+  height: 1cm;
+  background-color:rgb(14, 138, 215);
+}
 
-
-
-   .userName, .email, .select {
-    height: 50px;
-    margin-bottom: 0.4cm;
-    background-color: #FAFAFA;
-    width: 9cm;
-   }
+.userName, .email, .select {
+  height: 50px;
+  margin-bottom: 0.4cm;
+  background-color: #FAFAFA;
+  width: 9cm;
+}
 
 
-   .email, .userName, .newUser {
-    border-radius: 10px;
-   }
+.email, .userName, .newUser {
+  border-radius: 10px;
+}
 
-   .button.active {
-    border-bottom: 5px solid  rgb(157, 39, 221);
-    color: rgb(157, 39, 221);
-   }
+.button.active {
+  border-bottom: 5px solid  rgb(157, 39, 221);
+  color: rgb(157, 39, 221);
+}
 
-   .navRole {
-    display: flex;
-    justify-content: space-evenly;
-    margin-left: 300px;
-   }
+.navRole {
+  display: flex;
+  justify-content: space-evenly;
+}

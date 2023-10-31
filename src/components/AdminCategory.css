@@ -12,7 +12,7 @@
 
 }
 
-table {
+.category-table {
   width: 100%;
   margin-top: 2cm;
   margin-left: 50%;
@@ -37,7 +37,7 @@ table {
   
  }
 
- th, td {
+ .category-table th, td {
   padding: 8px;
   text-align: left;
   justify-content: space-evenly;
@@ -49,7 +49,7 @@ table {
   margin-top: 10px;
 }
 
-form {
+.category-form {
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,4 +1,4 @@
-button {
+.edit-profile-button {
     background-color: rgb(65, 20, 169);
     margin-bottom: 100px;
 }
@@ -10,13 +10,14 @@ button {
    
 }
 
-h1{
+.page-title {
     margin-left: -400px;
     /* color: black; */
 }
 
-p{
+.profile-text {
     margin-bottom: 15px;
     background-color: white;
     border: transparent;
+    width: 400px;
 }

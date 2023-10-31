@@ -32,18 +32,18 @@
     cursor: pointer;
 }
 
-.content-form {
+.content-form-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-form {
+.content-form {
     display: flex;
     flex-direction: column;
 }
 
-input, textarea, label, select, button {
+.modal input, textarea, label, select, button {
     margin-top: 12px;
 }

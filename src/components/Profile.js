@@ -23,21 +23,7 @@ const Profile = () => {
 
  return (
     <div className="profile">
-      <div>
-        <h1>Profile</h1>
-        <p>Name: {full_name}</p>
-        <p>Username: {username}</p>
-        <p>Email: {email}</p>
-        <p>Role: {role}</p>
-
-        <button onClick={toggleForm}>Edit profile</button>
-      </div>
-      
-      {showForm && (
-      <div>
         <ProfileForm email={ email }/>
-      </div>
-    )}
     </div>
  );
 };
