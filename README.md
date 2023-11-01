@@ -1,4 +1,4 @@
-# Snudge
+# Snudge - Moringa student Motivation app
 
 ## Table of Contents
 - [Introduction](#introduction)
