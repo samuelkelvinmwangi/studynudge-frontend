@@ -1,4 +1,4 @@
-# TechSpace Education Platform
+# Snudge
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -12,7 +12,15 @@
 
 ## Introduction
 
-Study Nudge Platform is a web-based application designed to provide students with authentic and verified information, inspiration, and advice in the tech space. This platform hosts a wide variety of content types, including videos, audio, and articles/blogs, all of which are created to aid in studying. This README offers an overview of the platform's features and technical details.
+Study Nudge (Snudge) Platform is a web-based application designed to provide students with authentic and verified information, inspiration, and advice in the tech space. This platform hosts a wide variety of content types, including videos, audio, and articles/blogs, all of which are created to aid in studying. This README offers an overview of the platform's features and technical details.
+
+### Backend Repo
+
+https://github.com/LGMAKENA/Snudge-backend
+
+### Backend Live Link:
+
+https://snudgeapi.onrender.com
 
 ## MVP Features
 
